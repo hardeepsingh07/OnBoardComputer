@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure type="buildings">
+    <header>
+        <img_url>../common/structure_imgs/</img_url>
+    </header>
+    <building>
+        <id>Bg-1</id>
+        <name>Building 1: Building One</name>
+        <centroid>
+            <lat>34.059701</lat>
+            <long>-117.824196</long>
+        </centroid>
+        <imgFileName>Bg-1.gif</imgFileName>
+        <description>North of Quad and West of Manor House (Bldg. 111).</description>
+    </building>
+    <building>
+        <id>Bg-2</id>
+        <name>Building 2: College of Agriculture</name>
+        <centroid>
+            <lat>34.057701</lat>
+            <long>-117.826663</long>
+        </centroid>
+        <imgFileName>Bg-2.gif</imgFileName>
+        <description>North of Biotrek (Bldg. 4A) and East of College of Environmental Design (Bldg. 7).</description>
+    </building>
+    <building>
+        <id>Bg-4</id>
+        <name>Building 4: Biotechnology Building</name>
+        <centroid>
+            <lat>34.057494999999996</lat>
+            <long>-117.82534050000001</long>
+        </centroid>
+        <imgFileName>Bg-4.gif</imgFileName>
+        <description>South of College of Agriculture (Bldg. 2) and West of Biotechnology Building (Bldg. 4).</description>
+    </building>
+    <building>
+        <id>Bg-4A</id>
+        <name>Building 4A: BioTrek Learning Center</name>
+        <centroid>
+            <lat>34.05722600000001</lat>
+            <long>-117.82610299999997</long>
+        </centroid>
+        <imgFileName>Bg-4A.gif</imgFileName>
+        <description>South of College of Agriculture (Bldg. 2) and West of Biotechnology Building (Bldg. 4).</description>
+    </building>
+    <building>
+        <id>Bg-5</id>
+        <name>Building 5: College of Letters, Arts and Social Sciences</name>
+        <centroid>
+            <lat>34.057748499999995</lat>
+            <long>-117.82447099999999</long>
+        </centroid>
+        <imgFileName>Bg-5.gif</imgFileName>
+        <description>South of College of Science (Bldg. 8) and East of Biotechnology Building (Bldg. 4).</description>
+    </building>
+    <building>
+        <id>Bg-6</id>
+        <name>Building 6: College of Education and Integrative Studies</name>
+        <centroid>
+            <lat>34.058583999999996</lat>
+            <long>-117.82283749999998</long>
+        </centroid>
+        <imgFileName>Bg-6.gif</imgFileName>
+        <description>South of University Office Building (Bldg. 94) and West of College of Engineering (Bldg. 9).</description>
+    </building>
+    <building>
+        <id>Bg-7</id>
+        <name>Building 7: College of Environmental Design</name>
+        <centroid>
+            <lat>34.05724550000001</lat>
+            <long>-117.827358</long>
+        </centroid>
+        <imgFileName>Bg-7.gif</imgFileName>
+        <description>South of Health Services (Bldg. 46) and West of College of Agriculture (Bldg. 2).</description>
+    </building>
+    <building>
+        <id>Bg-8</id>
+        <name>Building 8: College of Science</name>
+        <centroid>
+            <lat>34.0585175</lat>
+            <long>-117.82485199999999</long>
+        </centroid>
+        <imgFileName>Bg-8.gif</imgFileName>
+        <description>North of College of Education and Integrated Studies/College of Letters, Arts and Social Sciences (Bldg. 5) and East of Biotechnology Building (Bldg. 4).</description>
+    </building>
+    <building>
+        <id>Bg-9</id>
+        <name>Building 9: College of Engineering</name>
+        <centroid>
+            <lat>34.0591185</lat>
+            <long>-117.82227700000001</long>
+        </centroid>
+        <imgFileName>Bg-9.gif</imgFileName>
+        <description>North of Library (Bldg. 15) and East of College of Education and Integrative Studies Building (Bldg. 6).</description>
+    </building>
+    <building>
+        <id>Bg-13</id>
+        <name>Building 13: Art Department and Engineering Annex</name>
+        <centroid>
+            <lat>34.0587655</lat>
+            <long>-117.82081249999999</long>
+        </centroid>
+        <imgFileName>Bg-13.gif</imgFileName>
+        <description>South of Engineering Meadow and West of Classroom/Laboratory/Administration (Bldg. 98).</description>
+    </building>
+	<building>
+        <id>Bg-13B</id>
+        <name>Building 13B: Army ROTC</name>
+        <centroid>
+            <lat>34.058238</lat>
+            <long>-117.820773</long>
+        </centroid>
+        <imgFileName>Bg-13BCD.jpg</imgFileName>
+        <description>East of Library (Bldg. 15) and Southeast of Art Department and Engineering Annex (Bldg. 13).</description>
+    </building>
+	<building>
+        <id>Bg-13C</id>
+        <name>Building 13C: Army ROTC</name>
+        <centroid>
+            <lat>34.058356</lat>
+            <long>-117.820672</long>
+        </centroid>
+        <imgFileName>Bg-13BCD.jpg</imgFileName>
+        <description>East of Art Department and Engineering Annex (Bldg. 13) and South of Pre-College TRIO Programs (Bldg. 13D).</description>
+    </building>
+	<building>
+        <id>Bg-13D</id>
+        <name>Building 13D: Pre-College TRIO Programs</name>
+        <centroid>
+            <lat>34.058492</lat>
+            <long>-117.820460</long>
+        </centroid>
+        <imgFileName>Bg-13BCD.jpg</imgFileName>
+        <description>East of Art Department and Engineering Annex (Bldg. 13) and Southwest of Classroom/Laboratory/Administration (Bldg. 98).</description>
+    </building>
+    <building>
+        <id>Bg-17</id>
+        <name>Building 17: Engineering Laboratories</name>
+        <centroid>
+            <lat>34.0600475</lat>
+            <long>-117.8215675</long>
+        </centroid>
+        <imgFileName>Bg-17.gif</imgFileName>
+        <description>North of Engineering Meadow and West of Aratani Japanese Garden.</description>
+    </building>
+    <building>
+        <id>Bg-25</id>
+        <name>Building 25: Drama Department/Theatre</name>
+        <centroid>
+            <lat>34.056446</lat>
+            <long>-117.822094</long>
+        </centroid>
+        <imgFileName>Bg-25.gif</imgFileName>
+        <description>West of Bronco Student Center (Bldg. 35) and South of Music (Bldg. 24).</description>
+    </building>
+    <building>
+        <id>Bg-32</id>
+        <name>Building 32: Beef Unit/Feed Shed</name>
+        <centroid>
+            <lat>34.055456500000005</lat>
+            <long>-117.827587</long>
+        </centroid>
+        <imgFileName>Bg-32.gif</imgFileName>
+        <description>South of Parking Lot J and SouthWest of the College of Environmental Design (Bldg. 7).</description>
+    </building>
+    <building>
+        <id>Bg-35</id>
+        <name>Building 35: Bronco Student Center</name>
+        <centroid>
+            <lat>34.056175499999995</lat>
+            <long>-117.82126600000002</long>
+        </centroid>
+        <imgFileName>Bg-35.gif</imgFileName>
+        <description>West of Bronco Bookstore (Bldg. 66) and East of Drama Department (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-41</id>
+        <name>Building 41: Darlene May Gymnasium</name>
+        <centroid>
+            <lat>34.05406000000001</lat>
+            <long>-117.821308</long>
+        </centroid>
+        <imgFileName>Bg-41.gif</imgFileName>
+        <description>West of Swimming Pool (Bldg. 44).</description>
+    </building>
+    <building>
+        <id>Bg-42</id>
+            <name>Building 42: Bronco Recreation Intramural Complex (BRIC)</name>
+            <centroid>
+                <lat>34.05456</lat>
+                <long>-117.82082</long>
+            </centroid>
+            <imgFileName>Bg-42.jpg</imgFileName>
+            <description>South of Bronco Bookstore (Bldg. 66), West of Vista De Las Estrellas (Bldg. 54), and North of Gymnasium (Bldg. 43)</description>
+    </building>
+    <building>
+        <id>Bg-43</id>
+        <name>Building 43: Kellogg Gymnasium</name>
+        <centroid>
+            <lat>34.054205</lat>
+            <long>-117.81922149999998</long>
+        </centroid>
+        <imgFileName>Bg-43.gif</imgFileName>
+        <description>West of Residence Suites (Bldg. 60) and NorthEast of English Language Institute (Bldg. 86).</description>
+    </building>
+    <building>
+        <id>Bg-45</id>
+        <name>Building 45: Agricultural Engineering</name>
+        <centroid>
+            <lat>34.061104</lat>
+            <long>-117.8111305</long>
+        </centroid>
+        <imgFileName>Bg-45.gif</imgFileName>
+        <description>East of Interim Design Center (Bldg. 89).</description>
+    </building>
+    <building>
+        <id>Bg-46</id>
+        <name>Building 46: Health Services</name>
+        <centroid>
+            <lat>34.057798500000004</lat>
+            <long>-117.8280295</long>
+        </centroid>
+        <imgFileName>Bg-46.gif</imgFileName>
+        <description>North of College of Environmental Design (Bldg. 7) and South of Parking lot J.</description>
+    </building>
+    <building>
+        <id>Bg-55</id>
+        <name>Building 55: Foundation Administration Offices</name>
+        <centroid>
+            <lat>34.056247500000005</lat>
+            <long>-117.81990850000001</long>
+        </centroid>
+        <imgFileName>Bg-55.gif</imgFileName>
+        <description>East of Bronco Bookstore (Bldg. 66) and South of University Plaza (Bldg. 26).</description>
+    </building>
+    <building>
+        <id>Bg-66</id>
+        <name>Building 66: Bronco Bookstore</name>
+        <centroid>
+            <lat>34.0559635</lat>
+            <long>-117.82045749999999</long>
+        </centroid>
+        <imgFileName>Bg-66.gif</imgFileName>
+        <description>SouthEast of Bronco Student Center (Bldg. 35) and West of Foundation Administration Offices (Bldg. 55).</description>
+    </building>
+    <building>
+        <id>Bg-67</id>
+        <name>Building 67: Equine Research Facility</name>
+        <centroid>
+            <lat>34.0592365</lat>
+            <long>-117.8139155</long>
+        </centroid>
+        <imgFileName>Bg-67.gif</imgFileName>
+        <description>NorthEast of W.K. Kellogg Arabian Horse Center (Bldg. 29).</description>
+    </building>
+    <building>
+        <id>Bg-68</id>
+        <name>Building 68: Hay Barn</name>
+        <centroid>
+            <lat>34.0592365</lat>
+            <long>-117.8139155</long>
+        </centroid>
+        <imgFileName>Bg-68.gif</imgFileName>
+        <description>South the Beef Unit/Feed Shed (Bldg. 32) and North of the Feedmill (Bldg. 33).</description>
+    </building>
+    <building>
+        <id>Bg-76</id>
+        <name>Building 76: Kellogg West Education/Dining</name>
+        <centroid>
+            <lat>34.0566295</lat>
+            <long>-117.82490550000001</long>
+        </centroid>
+        <imgFileName>Bg-76.gif</imgFileName>
+        <description>East of Kellogg West Main Lodge (Bldg. 77) and SouthEast of Kellogg West Addition (Bldg. 78).</description>
+    </building>
+    <building>
+        <id>Bg-77</id>
+        <name>Building 77: Kellogg West Main Lodge</name>
+        <centroid>
+            <lat>34.0562515</lat>
+            <long>-117.825966</long>
+        </centroid>
+        <imgFileName>Bg-77.gif</imgFileName>
+        <description>West of Kellogg West Education/Dining (Bldg. 76) and SouthWest of Kellogg West Addition (Bldg. 78).</description>
+    </building>
+    <building>
+        <id>Bg-78</id>
+        <name>Building 78: Kellogg West Addition</name>
+        <centroid>
+            <lat>34.056784</lat>
+            <long>-117.82571800000001</long>
+        </centroid>
+        <imgFileName>Bg-78.gif</imgFileName>
+        <description>NorthEast of Kellogg West Main Lodge (Bldg. 77) and NorthWest of Kellogg West Education/Dining (Bldg. 76).</description>
+    </building>
+    <building>
+        <id>Bg-79</id>
+        <name>Building 79: Collins College of Hospitality Management</name>
+        <centroid>
+            <lat>34.054992500000004</lat>
+            <long>-117.824028</long>
+        </centroid>
+        <imgFileName>Bg-79.gif</imgFileName>
+        <description>South of Kellogg West Main Lodge (Bldg. 77).</description>
+    </building>
+    <building>
+        <id>Bg-79B</id>
+        <name>Building 79B: Collins College of Hospitality Management</name>
+        <centroid>
+            <lat>34.055315</lat>
+            <long>-117.82445150000001</long>
+        </centroid>
+        <imgFileName>Bg-79B.gif</imgFileName>
+        <description>South of Kellogg West Main Lodge (Bldg. 77).</description>
+    </building>
+    <building>
+        <id>Bg-79A</id>
+        <name>Building 79A: Collins College of Hospitality Management</name>
+        <centroid>
+            <lat>34.0550555</lat>
+            <long>-117.8248405</long>
+        </centroid>
+        <imgFileName>Bg-79A.gif</imgFileName>
+        <description>South of Kellogg West Main Lodge (Bldg. 77).</description>
+    </building>
+	<building>
+        <id>Bg-80</id>
+        <name>Building 80: Collins College of Hospitality Management, Marriott Learning Center</name>
+        <centroid>
+            <lat>34.054796</lat>
+            <long>-117.825461</long>
+        </centroid>
+        <imgFileName>Bg-80.jpg</imgFileName>
+        <description>West of Collins College of Hospitality Management (Bldg. 79A) and South of Kellogg West Main Lodge (Bldg. 77).</description>
+    </building>
+    <building>
+        <id>Bg-86</id>
+        <name>Building 86: English Language Institute</name>
+        <centroid>
+            <lat>34.0533796</lat>
+            <long>-117.8197038</long>
+        </centroid>
+        <imgFileName>Bg-86.gif</imgFileName>
+        <description>West of Kellogg Gymnasium (Bldg. 43) and South of Swimming Pool (Bldg. 44).</description>
+    </building>
+    <building>
+        <id>Bg-86A</id>
+        <name>Building 86A: English Language Institute</name>
+        <centroid>
+            <lat>34.0532554</lat>
+            <long>-117.8199964</long>
+        </centroid>
+        <imgFileName>Bg-86A.gif</imgFileName>
+        <description>West of Kellogg Gymnasium (Bldg. 43) and South of Swimming Pool (Bldg. 44).</description>
+    </building>
+    <building>
+        <id>Bg-86B</id>
+        <name>Building 86B: English Language Institute</name>
+        <centroid>
+            <lat>34.053535202</lat>
+            <long>-117.8200714</long>
+        </centroid>
+        <imgFileName>Bg-86B.gif</imgFileName>
+        <description>West of Kellogg Gymnasium (Bldg. 43) and South of Swimming Pool (Bldg. 44).</description>
+    </building>
+    <building>
+        <id>Bg-86C</id>
+        <name>Building 86C: English Language Institute</name>
+        <centroid>
+            <lat>34.053337</lat>
+            <long>-117.8201492</long>
+        </centroid>
+        <imgFileName>Bg-86C.gif</imgFileName>
+        <description>West of Kellogg Gymnasium (Bldg. 43) and South of Swimming Pool (Bldg. 44).</description>
+    </building>
+    <building>
+        <id>Bg-89</id>
+        <name>Building 89: Interim Design Center</name>
+        <centroid>
+            <lat>34.0605225</lat>
+            <long>-117.81233200000001</long>
+        </centroid>
+        <imgFileName>Bg-89.gif</imgFileName>
+        <description>East of Agricultural Engineering (Bldg. 45).</description>
+    </building>
+    <building>
+        <id>Bg-95</id>
+        <name>Building 95: Cultural Centers</name>
+        <centroid>
+            <lat>34.05791850000001</lat>
+            <long>-117.82265850000002</long>
+        </centroid>
+        <imgFileName>Bg-95.jpg</imgFileName>
+        <description>East of Campus Center (Bldg. 97) and South of College of Education and Integrative Studies (Bldg. 6).</description>
+    </building>
+    <building>
+        <id>Bg-97</id>
+        <name>Building 97: Campus Center</name>
+        <centroid>
+            <lat>34.05773</lat>
+            <long>-117.82328799999999</long>
+        </centroid>
+        <imgFileName>Bg-97.gif</imgFileName>
+        <description>SouthEast of College of Letters, Arts and Social Sciences (Bldg. 5) and SouthWest of College of Education and Integrative Studies (Bldg. 6).</description>
+    </building>
+    <building>
+        <id>Bg-98</id>
+        <name>Building 98: Classroom/Laboratory/Administration (C/L/A)</name>
+        <centroid>
+            <lat>34.059709500000004</lat>
+            <long>-117.81964100000003</long>
+        </centroid>
+        <imgFileName>Bg-98.gif</imgFileName>
+        <description>South of Aratani Japanese Garden and NorthWest of Voorhis Alumni Park.</description>
+    </building>
+    <building>
+        <id>Bg-112</id>
+        <name>Building 112: Kellogg House Pomona</name>
+        <centroid>
+            <lat>34.0626205</lat>
+            <long>-117.82440600000001</long>
+        </centroid>
+        <imgFileName>Bg-112.gif</imgFileName>
+        <description>North of Manor House (Bldg. 111).</description>
+    </building>
+    <building>
+        <id>Bg-116</id>
+        <name>Building 116: Child Care Center</name>
+        <centroid>
+            <lat>34.056053</lat>
+            <long>-117.8194005</long>
+        </centroid>
+        <imgFileName>Bg-116.gif</imgFileName>
+        <description>SouthEast of Bronco Bookstore (Bldg. 66) and South of Foundation Administration Offices (Bldg. 55).</description>
+    </building>
+    <building>
+        <id>Bg-220A</id>
+        <name>Building 220A: Center for Training, Technology and Incubation</name>
+        <centroid>
+            <lat>34.049948</lat>
+            <long>-117.815184</long>
+        </centroid>
+        <imgFileName>Bg-220A.gif</imgFileName>
+        <description>North of University Village (Bldg. 200).</description>
+    </building>
+    <building>
+        <id>Bg-220B</id>
+        <name>Building 220B: Center for Training, Technology and Incubation</name>
+        <centroid>
+            <lat>34.050389</lat>
+            <long>-117.815273</long>
+        </centroid>
+        <imgFileName>Bg-220B.gif</imgFileName>
+        <description>North of University Village (Bldg. 200).</description>
+    </building>
+    <building>
+        <id>Bg-220C</id>
+        <name>Building 220C: Center for Training, Technology and Incubation</name>
+        <centroid>
+            <lat>34.050179</lat>
+            <long>-117.814802</long>
+        </centroid>
+        <imgFileName>Bg-220C.gif</imgFileName>
+        <description>North of University Village (Bldg. 200).</description>
+    </building>
+    <building>
+        <id>Bg-92</id>
+        <name>Building 92: Laboratory Facility</name>
+        <centroid>
+            <lat>34.057806</lat>
+            <long>-117.82616800000001</long>
+        </centroid>
+        <imgFileName>Bg-92.gif</imgFileName>
+        <description>East of College of Agriculture (Bldg. 2) and West of Science Laboratory (Bldg. 3).</description>
+    </building>
+    <building>
+        <id>Bg-59</id>
+        <name>Building 59: La Cienega Center (University Housing Services)</name>
+        <centroid>
+            <lat>34.060976</lat>
+            <long>-117.82194899999999</long>
+        </centroid>
+        <imgFileName>Bg-59.gif</imgFileName>
+        <description>East of Residence Hall, Palmitas (Bldg. 57) and West of Residence Hall, Cedritos (Bldg. 58).</description>
+    </building>
+    <building>
+        <id>Bg-15</id>
+        <name>Building 15: Library</name>
+        <centroid>
+            <lat>34.057829000000005</lat>
+            <long>-117.821358</long>
+        </centroid>
+        <imgFileName>Bg-15.gif</imgFileName>
+        <description>SouthWest of Art Department/Engineering Annex (Bldg. 13) and South of College of Engineering (Bldg. 9).</description>
+    </building>
+    <building>
+        <id>Bg-70</id>
+        <name>Building 70: Los Olivos Commons</name>
+        <centroid>
+            <lat>34.062402500000005</lat>
+            <long>-117.821579</long>
+        </centroid>
+        <imgFileName>Bg-70.gif</imgFileName>
+        <description>North of Residence Hall, Cedritos (Bldg. 58) and NorthWest of Residence Hall, Encinitas (Bldg. 20).</description>
+    </building>
+    <building>
+        <id>Bg-111</id>
+        <name>Building 111: Manor House</name>
+        <centroid>
+            <lat>34.0605375</lat>
+            <long>-117.82301299999997</long>
+        </centroid>
+        <imgFileName>Bg-111.gif</imgFileName>
+        <description>West of Residence Hall, Palmitas (Bldg. 57) and North of College of Engineering (Bldg. 9).</description>
+    </building>
+    <building>
+        <id>Bg-24</id>
+        <name>Building 24: Music</name>
+        <centroid>
+            <lat>34.056718999999994</lat>
+            <long>-117.82291000000001</long>
+        </centroid>
+        <imgFileName>Bg-24.gif</imgFileName>
+        <description>South of Campus Center (Bldg. 97) and North of Drama Department (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-106</id>
+        <name>Building 106: Parking Structure</name>
+        <centroid>
+            <lat>34.060415000000006</lat>
+            <long>-117.81702800000001</long>
+        </centroid>
+        <imgFileName>Bg-106.gif</imgFileName>
+        <description>East of Voorhis Alumni Park and West of Police and Parking Services (Bldg. 109).</description>
+    </building>
+    <building>
+        <id>Bg-109</id>
+        <name>Building 109: Police and Parking Services</name>
+        <centroid>
+            <lat>34.060770000000005</lat>
+            <long>-117.81581849999999</long>
+        </centroid>
+        <imgFileName>Bg-109.gif</imgFileName>
+        <description>East of Parking Structure (Bldg. 106).</description>
+    </building>
+    <building>
+        <id>Bg-71</id>
+        <name>Building 71: Recreation/Maintenance</name>
+        <centroid>
+            <lat>34.063021000000006</lat>
+            <long>-117.81681799999998</long>
+        </centroid>
+        <imgFileName>Bg-71.gif</imgFileName>
+        <description>East of Residence Hall, Alamitos (Bldg. 22) and SouthEast of Residence Hall, Aliso (Bldg. 23).</description>
+    </building>
+    <building>
+        <id>Bg-22</id>
+        <name>Building 22: Residence Hall, Alamitos</name>
+        <centroid>
+            <lat>34.062235</lat>
+            <long>-117.81806549999999</long>
+        </centroid>
+        <imgFileName>Bg-22.gif</imgFileName>
+        <description>North of F2 Parking lot and South of Residence Hall, Aliso (Bldg. 23).</description>
+    </building>
+    <building>
+        <id>Bg-23</id>
+        <name>Building 23: Residence Hall, Aliso</name>
+        <centroid>
+            <lat>34.0629025</lat>
+            <long>-117.81781</long>
+        </centroid>
+        <imgFileName>Bg-23.gif</imgFileName>
+        <description>North of Residence Hall, Alamitos (Bldg. 22).</description>
+    </building>
+    <building>
+        <id>Bg-58</id>
+        <name>Building 58: Residence Hall, Cedritos</name>
+        <centroid>
+            <lat>34.061541000000005</lat>
+            <long>-117.821236</long>
+        </centroid>
+        <imgFileName>Bg-58.gif</imgFileName>
+        <description>East of La Cienega Center (University Housing Services Bldg. 59) and North of Rose Garden.</description>
+    </building>
+    <building>
+        <id>Bg-20</id>
+        <name>Building 20: Residence Hall, Encinitas</name>
+        <centroid>
+            <lat>34.062315</lat>
+            <long>-117.82058749999999</long>
+        </centroid>
+        <imgFileName>Bg-20.gif</imgFileName>
+        <description>SouthEast of Los Olivos Commons (Bldg. 70) and NorthWest of Residence Hall, Montecito (Bldg. 21).</description>
+    </building>
+    <building>
+        <id>Bg-21</id>
+        <name>Building 21: Residence Hall, Montecito</name>
+        <centroid>
+            <lat>34.062185500000005</lat>
+            <long>-117.819286</long>
+        </centroid>
+        <imgFileName>Bg-21.gif</imgFileName>
+        <description>SouthEast of Residence Hall, Encinitas (Bldg. 20) and NorthWest of Residence Hall, Alamitos (Bldg. 22).</description>
+    </building>
+    <building>
+        <id>Bg-57</id>
+        <name>Building 57: Residence Hall, Palmitas</name>
+        <centroid>
+            <lat>34.060554499999995</lat>
+            <long>-117.82237599999998</long>
+        </centroid>
+        <imgFileName>Bg-57.gif</imgFileName>
+        <description>East of Manor House (Bldg. 111) and West of La Cienega Center (University Housing Services Bldg. 59).</description>
+    </building>
+    <building>
+        <id>Bg-60</id>
+        <name>Building 60: Residence Suites</name>
+        <centroid>
+            <lat>34.0548685</lat>
+            <long>-117.81845849999999</long>
+        </centroid>
+        <imgFileName>Bg-60.gif</imgFileName>
+        <description>East of Kellogg Gymnasium (Bldg. 43).</description>
+    </building>
+    <building>
+        <id>Bg-61</id>
+        <name>Building 61: Residence Suites</name>
+        <centroid>
+            <lat>34.0547065</lat>
+            <long>-117.8179165</long>
+        </centroid>
+        <imgFileName>Bg-61.gif</imgFileName>
+        <description>East of Kellogg Gymnasium (Bldg. 43).</description>
+    </building>
+    <building>
+        <id>Bg-91</id>
+        <name>Building 91: Student Affairs Information Technology Services</name>
+        <centroid>
+            <lat>34.061336499999996</lat>
+            <long>-117.81862600000001</long>
+        </centroid>
+        <imgFileName>Bg-91.gif</imgFileName>
+        <description>South of Residence Hall, Montecito (Bldg. 21) and SouthWest of Residence Hall, Alamitos (Bldg. 22).</description>
+    </building>
+    <building>
+        <id>Bg-3</id>
+        <name>Building 3: Science Laboratory</name>
+        <centroid>
+            <lat>34.058155</lat>
+            <long>-117.825508</long>
+        </centroid>
+        <imgFileName>Bg-3.gif</imgFileName>
+        <description>North of Biotechnology Building (Bldg. 4) and West of College of Science (Bldg. 8).</description>
+    </building>
+    <building>
+        <id>Bg-44</id>
+        <name>Building 44: Swimming Pool</name>
+        <centroid>
+            <lat>34.05371</lat>
+            <long>-117.82041</long>
+        </centroid>
+        <imgFileName>Bg-44.gif</imgFileName>
+        <description>East of Darlene May Gymnasium (Bldg. 41).</description>
+    </building>
+    <building>
+        <id>Bg-26</id>
+        <name>Building 26: University Plaza</name>
+        <centroid>
+            <lat>34.0569935</lat>
+            <long>-117.8203505</long>
+        </centroid>
+        <imgFileName>Bg-26.gif</imgFileName>
+        <description>North of Foundation Administration Offices (Bldg. 55) and East of Bronco Student Center (Bldg. 35).</description>
+    </building>
+    <building>
+        <id>Bg-94</id>
+        <name>Building 94: University Office Building</name>
+        <centroid>
+            <lat>34.0591985</lat>
+            <long>-117.823227</long>
+        </centroid>
+        <imgFileName>Bg-94.gif</imgFileName>
+        <description>North of College of Education and Integrative Studies (Bldg. 6) and West of College of Engineering (Bldg. 9).</description>
+    </building>
+    <building>
+        <id>Bg-200</id>
+        <name>Building 200: University Village</name>
+        <centroid>
+            <lat>34.0482695</lat>
+            <long>-117.81516249999999</long>
+        </centroid>
+        <imgFileName>Bg-200.gif</imgFileName>
+        <description>South of Center for Training, Technology and Incubation (Bldg. 220A).</description>
+    </building>
+    <building>
+        <id>Bg-29</id>
+        <name>Building 29: W.K. Kellogg Arabian Horse Center</name>
+        <centroid>
+            <lat>34.0586245</lat>
+            <long>-117.814789</long>
+        </centroid>
+        <imgFileName>Bg-29.gif</imgFileName>
+        <description>West of Equine Research Facility (Bldg. 67).</description>
+    </building>
+    <building>
+        <id>Bg-38</id>
+        <name>Building 38: Sheep/Wool Unit</name>
+        <centroid>
+            <lat>34.052175500000004</lat>
+            <long>-117.822414</long>
+        </centroid>
+        <imgFileName>Bg-38.gif</imgFileName>
+        <description>SouthEast of Swine Unit/Shelters (Bldg. 37).</description>
+    </building>
+    <building>
+        <id>Bg-37</id>
+        <name>Building 37: Swine Unit/Shelters</name>
+        <centroid>
+            <lat>34.052209999999995</lat>
+            <long>-117.82334499999999</long>
+        </centroid>
+        <imgFileName>Bg-37.gif</imgFileName>
+        <description>NorthWest of Sheep/Wool Unit (Bldg. 38).</description>
+    </building>
+    <building>
+        <id>Bg-24A</id>
+        <name>Building 24A: Temporary Classroom A</name>
+        <centroid>
+            <lat>34.0562875</lat>
+            <long>-117.82248300000002</long>
+        </centroid>
+        <imgFileName>Bg-24A-E.gif</imgFileName>
+        <description>West of Drama Department/Theater (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-24B</id>
+        <name>Building 24B: Temporary Classroom B</name>
+        <centroid>
+            <lat>34.0561675</lat>
+            <long>-117.82240300000001</long>
+        </centroid>
+        <imgFileName>Bg-24A-E.gif</imgFileName>
+        <description>West of Drama Department/Theater (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-24C</id>
+        <name>Building 24C: Temporary Classroom C</name>
+        <centroid>
+            <lat>34.055908</lat>
+            <long>-117.8223995</long>
+        </centroid>
+        <imgFileName>Bg-24A-E.gif</imgFileName>
+        <description>West of Drama Department/Theater (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-24D</id>
+        <name>Building 24D: Temporary Classroom D</name>
+        <centroid>
+            <lat>34.05597850000001</lat>
+            <long>-117.82252150000001</long>
+        </centroid>
+        <imgFileName>Bg-24A-E.gif</imgFileName>
+        <description>West of Drama Department/Theater (Bldg. 25).</description>
+    </building>
+    <building>
+        <id>Bg-24E</id>
+        <name>Building 24E: Temporary Classroom E</name>
+        <centroid>
+            <lat>34.0561735</lat>
+            <long>-117.82262</long>
+        </centroid>
+        <imgFileName>Bg-24A-E.gif</imgFileName>
+        <description>West of Drama Department/Theater (Bldg. 25).</description>
+    </building>
+    <!--
+    <building>
+        <id>Bg-133</id>
+        <name>Building 133: Parking Information Booth</name>
+        <centroid>
+            <lat>34.0579435</lat>
+            <long>-117.8188515</long>
+        </centroid>
+        <imgFileName>Bg-133.gif</imgFileName>
+        <description>South of Classroom / Laboratory / Administration (C/L/A) (Bldg. 98).</description>
+    </building>
+    -->
+    <building>
+        <id>Bg-35A</id>
+        <name>Building 35A: W. Keith and Janet Kellogg University Art Gallery</name>
+        <centroid>
+            <lat>34.0569555</lat>
+            <long>-117.8217735</long>
+        </centroid>
+        <imgFileName>Bg-35A.gif</imgFileName>
+        <description>North of Bronco Student Center (Bldg. 35) and SouthWest of Library (Bldg. 15).</description>
+    </building>
+    <building>
+        <id>Bg-56</id>
+        <name>Building 56: Storage Building</name>
+        <centroid>
+            <lat>34.0619165</lat>
+            <long>-117.81090150000001</long>
+        </centroid>
+        <imgFileName>Bg-56.gif</imgFileName>
+        <description>NorthEast of Interim Design Center (Bldg. 89).</description>
+    </building>
+    <building>
+        <id>Bg-99</id>
+        <name>Building 99: Storage Building</name>
+        <centroid>
+            <lat>34.0618345</lat>
+            <long>-117.811016</long>
+        </centroid>
+        <imgFileName>Bg-99.gif</imgFileName>
+        <description>NorthEast of Interim Design Center (Bldg. 89).</description>
+    </building>
+    <building>
+        <id>Bg-100</id>
+        <name>Building 100: Storage Building</name>
+        <centroid>
+            <lat>34.062027</lat>
+            <long>-117.81082500000001</long>
+        </centroid>
+        <imgFileName>Bg-100.gif</imgFileName>
+        <description>NorthEast of Interim Design Center (Bldg. 89).</description>
+    </building>
+    <building>
+        <id>Bg-65</id>
+        <name>Building 65: Pesticide Building</name>
+        <centroid>
+            <lat>34.061625</lat>
+            <long>-117.8107795</long>
+        </centroid>
+        <imgFileName>Bg-65.gif</imgFileName>
+        <description>South of Storage Building (Bldg. 100) and NorthEast of Agricultural Engineering (Bldg. 45).</description>
+    </building>
+    <building>
+        <id>Bg-28</id>
+        <name>Building 28: Fruit/Crops Unit</name>
+        <centroid>
+            <lat>34.060036</lat>
+            <long>-117.810928</long>
+        </centroid>
+        <imgFileName>Bg-28.gif</imgFileName>
+        <description>South of Agricultural Engineering (Bldg. 45) and SouthEast of Interim Design Center (Bldg. 89).</description>
+    </building>
+    <building>
+        <id>Bg-49</id>
+        <name>Building 49: Training Center</name>
+        <centroid>
+            <lat>34.0599155</lat>
+            <long>-117.8092385</long>
+        </centroid>
+        <imgFileName>Bg-49.gif</imgFileName>
+        <description>East of Fruit/Crops Unit (Bldg. 28) and NorthWest of Facilities Management (Bldg. 81).</description>
+    </building>
+    <building>
+        <id>Bg-81</id>
+        <name>Building 81: Facilities Management</name>
+        <centroid>
+            <lat>34.05952799999999</lat>
+            <long>-117.80882649999998</long>
+        </centroid>
+        <imgFileName>Bg-81.gif</imgFileName>
+        <description>SouthEast of Training Center (Bldg. 49).</description>
+    </building>
+    <building>
+        <id>Bg-82</id>
+        <name>Building 82: Facilities Management Warehouse</name>
+        <centroid>
+            <lat>34.0598015</lat>
+            <long>-117.80865849999999</long>
+        </centroid>
+        <imgFileName>Bg-82.gif</imgFileName>
+        <description>NorthEast of Facilities Management (Bldg. 81).</description>
+    </building>
+    <building>
+        <id>Bg-82A</id>
+        <name>Building 82A: Carpenter Shop</name>
+        <centroid>
+            <lat>34.0599595</lat>
+            <long>-117.808861</long>
+        </centroid>
+        <imgFileName>Bg-82A.gif</imgFileName>
+        <description>East of Training Center (Bldg. 49) and North of Facilities Management (Bldg. 81).</description>
+    </building>
+    <building>
+        <id>Bg-48</id>
+        <name>Building 48: Custodial Offices</name>
+        <centroid>
+            <lat>34.05901299999999</lat>
+            <long>-117.808449</long>
+        </centroid>
+        <imgFileName>Bg-48.gif</imgFileName>
+        <description>South of Auto Shop (Bldg. 83).</description>
+    </building>
+    <building>
+        <id>Bg-83</id>
+        <name>Building 83: Auto Shop</name>
+        <centroid>
+            <lat>34.0593605</lat>
+            <long>-117.80817400000001</long>
+        </centroid>
+        <imgFileName>Bg-83.gif</imgFileName>
+        <description>East of Facilities Management (Bldg. 81).</description>
+    </building>
+    <building>
+        <id>Bg-75</id>
+        <name>Building 75: Procurement/Receiving</name>
+        <centroid>
+            <lat>34.059616</lat>
+            <long>-117.8078615</long>
+        </centroid>
+        <imgFileName>Bg-75.gif</imgFileName>
+        <description>NorthEast of Auto Shop (Bldg. 83).</description>
+    </building>
+    <building>
+        <id>Bg-47</id>
+        <name>Building 47: Agricultural Engineering Tractor Shop</name>
+        <centroid>
+            <lat>34.0598335</lat>
+            <long>-117.80818899999998</long>
+        </centroid>
+        <imgFileName>Bg-47.gif</imgFileName>
+        <description>North of Auto Shop (Bldg. 83).</description>
+    </building>
+    <building>
+        <id>Bg-64</id>
+        <name>Building 64: Rose Float Laboratory</name>
+        <centroid>
+            <lat>34.060089</lat>
+            <long>-117.80821600000002</long>
+        </centroid>
+        <imgFileName>Bg-64.gif</imgFileName>
+        <description>North of Agricultural Engineering Tractor Shop (Bldg. 47).</description>
+    </building>
+    <building>
+        <id>Bg-193</id>
+        <name>Building 193: Chilled Water Center Plant</name>
+        <centroid>
+            <lat>34.0570695</lat>
+            <long>-117.82979950000001</long>
+        </centroid>
+        <imgFileName>Bg-193.gif</imgFileName>
+        <description>East of Health Services (Bldg. 46).</description>
+    </building>
+    <building>
+        <id>Bg-30</id>
+        <name>Building 30: Agricultural Unit</name>
+        <centroid>
+            <lat>34.055115</lat>
+            <long>-117.8284605</long>
+        </centroid>
+        <imgFileName>Bg-30.gif</imgFileName>
+        <description>West of Beef Unit/Feed Shed (Bldg. 32).</description>
+    </building>
+    <building>
+        <id>Bg-31</id>
+        <name>Building 31: Poultry Unit/Poultry Houses</name>
+        <centroid>
+            <lat>34.0546795</lat>
+            <long>-117.8283615</long>
+        </centroid>
+        <imgFileName>Bg-31.gif</imgFileName>
+        <description>South of Agricultural Unit (Bldg. 30).</description>
+    </building>
+    <building>
+        <id>Bg-33</id>
+        <name>Building 33: Feedmill</name>
+        <centroid>
+            <lat>34.0539855</lat>
+            <long>-117.827511</long>
+        </centroid>
+        <imgFileName>Bg-33.gif</imgFileName>
+        <description>South of Beef Unit/Feed Shed (Bldg. 32).</description>
+    </building>
+    <building>
+        <id>Bg-34</id>
+        <name>Building 34: Meat Laboratory</name>
+        <centroid>
+            <lat>34.053905</lat>
+            <long>-117.82813250000001</long>
+        </centroid>
+        <imgFileName>Bg-34.gif</imgFileName>
+        <description>West of Feedmill (Bldg. 33) and South of Poultry Unit/Poultry Houses (Bldg. 31).</description>
+    </building>
+    <building>
+        <id>Bg-113</id>
+        <name>Building 113: Guest House</name>
+        <centroid>
+            <lat>34.062435</lat>
+            <long>-117.82475299999999</long>
+        </centroid>
+        <imgFileName>Bg-113.gif</imgFileName>
+        <description>West of Kellogg House Pomona (Bldg. 112).</description>
+    </building>
+    <building>
+        <id>Bg-209</id>
+        <name>Building 209: Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.04961</lat>
+            <long>-117.82445499999999</long>
+        </centroid>
+        <imgFileName>Bg-209.gif</imgFileName>
+        <description>West of University Village (Bldg. 200).</description>
+    </building>
+    <building>
+        <id>Bg-211</id>
+        <name>Building 211: Agriscapes/Farm Store</name>
+        <centroid>
+            <lat>34.048244499999996</lat>
+            <long>-117.81928650000002</long>
+        </centroid>
+        <imgFileName>Bg-211.gif</imgFileName>
+        <description>West of University Village (Bldg. 200) and East of Center for Regenerative Studies (Bldg. 209).</description>
+    </building>
+    <building>
+        <id>Bg-62</id>
+        <name>Building 62: Residence Suites</name>
+        <centroid>
+            <lat>34.05441563</lat>
+            <long>-117.817164909</long>
+        </centroid>
+        <imgFileName>Bg-62.jpg</imgFileName>
+        <description>East of Residence Suites (Bldg. 61) and South of Parking Lot P.</description>
+    </building>
+    <building>
+        <id>Bg-63</id>
+        <name>Building 63: Residence Suites</name>
+        <centroid>
+            <lat>34.053874</lat>
+            <long>-117.8169405</long>
+        </centroid>
+        <imgFileName>Bg-63.gif</imgFileName>
+        <description>South of Residence Suites (Bldg. 62).</description>
+    </building>
+    <building>
+        <id>Bg-54</id>
+        <name>Building 54: Residence Suites</name>
+        <centroid>
+            <lat>34.055476167</lat>
+            <long>-117.8190199167</long>
+        </centroid>
+        <imgFileName>Bg-54.jpg</imgFileName>
+        <description>South of Child Care Center (Bldg. 116) and North of Kellogg Gymnasium (Bldg. 43).</description>
+    </building>
+    <building>
+        <id>Bg-52</id>
+        <name>Building 52: Vista Market</name>
+        <centroid>
+            <lat>34.0539674</lat>
+            <long>-117.8178871</long>
+        </centroid>
+        <imgFileName>Bg-52.jpg</imgFileName>
+        <description>East of Kellogg Gymnasium (Bldg. 43) and South of Residence Suites (Bldg. 61).</description>
+    </building>
+
+    <building>
+        <id>Bg-162</id>
+        <name>Building 162: College of Business Administration</name>
+        <centroid>
+            <lat>34.061273</lat>
+            <long>-117.819684</long>
+        </centroid>
+        <imgFileName>Bg-162.gif</imgFileName>
+        <description>College of Business Administration Complex - Auditorium.</description>
+    </building>
+    <building>
+        <id>Bg-163</id>
+        <name>Building 163: College of Business Administration</name>
+        <centroid>
+            <lat>34.061297</lat>
+            <long>-117.820201</long>
+        </centroid>
+        <imgFileName>Bg-163.gif</imgFileName>
+        <description>College of Business Administration Complex - Classrooms.</description>
+    </building>
+    <building>
+        <id>Bg-164</id>
+        <name>Building 164: College of Business Administration</name>
+        <centroid>
+            <lat>34.061555</lat>
+            <long>-117.819799</long>
+        </centroid>
+        <imgFileName>Bg-164.gif</imgFileName>
+        <description>College of Business Administration Complex - faculty and administrative offices.</description>
+    </building>
+
+
+    <building>
+        <id>Bg-215</id>
+        <name>Building 215: Agriscapes</name>
+        <centroid>
+            <lat>34.0467166854</lat>
+            <long>-117.819393214</long>
+        </centroid>
+        <imgFileName>Bg-215.gif</imgFileName>
+        <description>Southwest of Landlab Information Center (Bldg. 213)</description>
+    </building>
+    <building>
+        <id>Bg-211A</id>
+        <name>Building 211A: Agriscapes</name>
+        <centroid>
+            <lat>34.0483451711</lat>
+            <long>-117.819070761</long>
+        </centroid>
+        <imgFileName>Bg-211A.gif</imgFileName>
+        <description>West of University Village (Bldg. 200) and East of Center for Regenerative Studies (Bldg. 209).</description>
+    </building>
+
+    <building>
+        <id>Bg-218</id>
+        <name>Building 218: American Red Cross Headquarters</name>
+        <centroid>
+            <lat>34.0537927489</lat>
+            <long>-117.811404744</long>
+        </centroid>
+        <imgFileName>Bg-218.gif</imgFileName>
+        <description>Northeast of Innovation Village (Bldg. 219), and off of South Campus Drive and Kellogg Drive</description>
+    </building>
+    
+    <building>
+        <id>Bg-216</id>
+        <name>Building 216: Innovation Village SCE</name>
+        <centroid>
+            <lat>34.0510610623</lat>
+            <long>-117.813905589</long>
+        </centroid>
+        <imgFileName>Bg-216.gif</imgFileName>
+        <description>Southwest of Innovation Village (Bldg. 213) and Northeast of Center for Traiing, Technology, and Incubation (Bldg. 220C)</description>
+    </building>
+    <building>
+        <id>Bg-89A</id>
+        <name>Building 89A: Interim Design Center</name>
+        <centroid>
+            <lat>34.0605376148999</lat>
+            <long>-117.81208585</long>
+        </centroid>
+        <imgFileName>Bg-89A.gif</imgFileName>
+        <description>Southeast of Interim Design Center (Bldg. 89)</description>
+    </building>
+    <building>
+        <id>Bg-89B</id>
+        <name>Building 89B: Interim Design Center</name>
+        <centroid>
+            <lat>34.0600882127999</lat>
+            <long>-117.812398105</long>
+        </centroid>
+        <imgFileName>Bg-89B.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-208</id>
+        <name>Building 208: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0499674225</lat>
+            <long>-117.822870572</long>
+        </centroid>
+        <imgFileName>Bg-208.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-210</id>
+        <name>Building 210: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.049661948</lat>
+            <long>-117.821625818</long>
+        </centroid>
+        <imgFileName>Bg-210.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-209C</id>
+        <name>Building 209C: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0496938993999</lat>
+            <long>-117.824131356</long>
+        </centroid>
+        <imgFileName>Bg-209C.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-209L</id>
+        <name>Building 209L: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.049672981</lat>
+            <long>-117.824392391999</long>
+        </centroid>
+        <imgFileName>Bg-209L.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-209R</id>
+        <name>Building 209R: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0493668342</lat>
+            <long>-117.824683999</long>
+        </centroid>
+        <imgFileName>Bg-209R.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-209S</id>
+        <name>Building 209S: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0496050170999</lat>
+            <long>-117.824762539999</long>
+        </centroid>
+        <imgFileName>Bg-209S.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-209W</id>
+        <name>Building 209W: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0497821056999</lat>
+            <long>-117.824385961999</long>
+        </centroid>
+        <imgFileName>Bg-209W.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+    <building>
+        <id>Bg-76A</id>
+        <name>Building 76A: Kellogg West/Addition</name>
+        <centroid>
+            <lat>34.0567213345999</lat>
+            <long>-117.825127294</long>
+        </centroid>
+        <imgFileName>Bg-76A.gif</imgFileName>
+        <description>Northeast of Kellogg West Main Lodge (Bldg. 77) and Northwest of Kellogg West Education/Dining (Bldg. 76).</description>
+    </building>
+    
+    <building>
+        <id>Bg-150</id>
+        <name>Building 150: MASA Building</name>
+        <centroid>
+            <lat>34.0572629333</lat>
+            <long>-117.820835695</long>
+        </centroid>
+        <imgFileName>Bg-150.gif</imgFileName>
+        <description>South of the Library (Bldg. 15) and North of University Plaza (Bldg. 26)</description>
+    </building>
+    <building>
+        <id>Bg-90</id>
+        <name>Building 90: Medic-1</name>
+        <centroid>
+            <lat>34.0611738475</lat>
+            <long>-117.816595883999</long>
+        </centroid>
+        <imgFileName>Bg-90.gif</imgFileName>
+        <description>Located off of Cypress Lane and Magnolia Lane and North of the Parking Structure (Bldg. 106)</description>
+    </building>
+
+    <building>
+        <id>Bg-26A</id>
+        <name>Building 26A: Student Orientation Center</name>
+        <centroid>
+            <lat>34.0567153169999</lat>
+            <long>-117.820555484</long>
+        </centroid>
+        <imgFileName>Bg-26A.gif</imgFileName>
+        <description>South of University Plaza (Bldg. 26) and East of University Park</description>
+    </building>
+
+
+    <building>
+        <id>Bg-207</id>
+        <name>Building 207: John T. Lyle Center for Regenerative Studies</name>
+        <centroid>
+            <lat>34.0499674225</lat>
+            <long>-117.822870572</long>
+        </centroid>
+        <imgFileName>Bg-207.gif</imgFileName>
+        <description>Off of South University Drive and West Temple Avenue</description>
+    </building>
+
+
+    <building>
+        <id>Bg-85</id>
+        <name>Building 85: I-Poly High School</name>
+        <centroid>
+            <lat>34.0509061230999</lat>
+            <long>-117.819376721</long>
+        </centroid>
+        <imgFileName>Bg-85.gif</imgFileName>
+        <description>Off of Temple Avenue and University Drive and Southwest of Parking Lot K</description>
+    </building>
+</structure>

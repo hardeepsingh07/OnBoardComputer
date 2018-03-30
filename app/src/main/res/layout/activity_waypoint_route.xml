@@ -1,0 +1,397 @@
+<layout>
+
+    <data>
+        <variable
+            name="building"
+            type="com.example.hardeepsingh.onboardcomputer.models.Building" />
+    </data>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context="com.example.hardeepsingh.onboardlayout.Activities.WaypointRoute">
+
+        <!--Map-->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <!--Launch Dashboard-->
+        <RelativeLayout
+            android:id="@+id/destination_info"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:background="#212121"
+            android:translationX="-300dp">
+
+            <!--Destination Info-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:id="@+id/building_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BUILDING:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25dp"
+                        android:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@{building.name}"
+                        android:textColor="@android:color/white"
+                        android:textSize="22dp"
+                        android:typeface="serif"
+                        tools:text="Full Name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="NAME:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25dp"
+                        android:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@{building.fullName}"
+                        android:textColor="@android:color/white"
+                        android:textSize="22dp"
+                        android:typeface="serif"
+                        tools:text="Full Name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="SURROUNDINGS:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25dp"
+                        android:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@{building.surroundings}"
+                        android:textColor="@android:color/white"
+                        android:textSize="22dp"
+                        android:typeface="serif"
+                        tools:text="Full Name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/route_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="DISTANCE:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25dp"
+                        android:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:id="@+id/distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="22dp"
+                        android:typeface="serif"
+                        tools:text="2 miles" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="DURATION:"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25dp"
+                        android:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:id="@+id/duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="22dp"
+                        android:typeface="serif"
+                        tools:text="2 minutes" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--InRoute Dashboard-->
+        <RelativeLayout
+            android:id="@+id/inRoute_panel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:background="#212121"
+            android:translationX="-300dp">
+
+            <!-- Info-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time Remaining:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"
+                    android:typeface="serif" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDivider" />
+
+                <TextView
+                    android:id="@+id/timeRemainingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:typeface="serif"
+                    tools:text="Full Name" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Distance Remaining:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"
+                    android:typeface="serif" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDivider" />
+
+                <TextView
+                    android:id="@+id/distanceRemainingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:typeface="serif"
+                    tools:text="Full Name" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--Destination Panel-->
+        <RelativeLayout
+            android:id="@+id/complete_panel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.5"
+            android:background="#212121"
+            android:translationY="200dp">
+
+            <!-- Info-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YOU HAVE ARRIVED!"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="26sp"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/b_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bulding Name"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Surroundings: "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="26sp"
+                    android:typeface="serif" />
+
+
+                <TextView
+                    android:id="@+id/b_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Building Description"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="300dp"
+                    android:textSize="22sp"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <!--Buttons-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/go_back"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bordercircularbutton"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="travelBack"
+                    android:text="Go Back"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+
+                <Button
+                    android:id="@+id/new_destination"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bordercircularbutton"
+                    android:backgroundTint="@color/colorAccent"
+                    android:onClick="newSelection"
+                    android:text="Restart"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--Buttons Layouts-->
+        <RelativeLayout
+            android:id="@+id/launch_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            android:scaleX="0"
+            android:scaleY="0">
+
+            <Button
+                android:id="@+id/launchButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bordercircularbutton"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="startNavigation"
+                android:text="@string/letsgo"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bordercircularbutton"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:onClick="stopNavigation"
+                android:text="@string/stop"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:typeface="serif"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

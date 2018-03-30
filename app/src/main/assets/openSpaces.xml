@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure type="open spaces">
+	<header>
+		<img_url>../common/structure_imgs/</img_url>
+	</header>
+	<openSpace>
+		<id>Os-17</id>
+		<name>Engineering Meadow</name>
+		<centroid>
+			<lat>34.0591985</lat>
+			<long>-117.821392</long>
+		</centroid>
+		<imgFileName>Os-17.gif</imgFileName>
+		<description>East of College of Engineering (Bldg. 9) and South of Engineering Laboratories (Bldg. 17).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-25</id>
+		<name>University Quad</name>
+		<centroid>
+			<lat>34.058611</lat>
+			<long>-117.82379900000001</long>
+		</centroid>
+		<imgFileName>Os-25.gif</imgFileName>
+		<description>East of College of Science (Bldg. 8) and West of College of Business Administration (Bldg. 6).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-38</id>
+		<name>Voorhis Park</name>
+		<centroid>
+			<lat>34.059961</lat>
+			<long>-117.8187105</long>
+		</centroid>
+		<imgFileName>Os-38.gif</imgFileName>
+		<description>East of Classroom/Laboratory/Administration (C/L/A) (Bldg. 98) and West of Parking Structure (Bldg. 106).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-39</id>
+		<name>Voorhis Ecological Reserve</name>
+		<centroid>
+			<lat>34.0594085</lat>
+			<long>-117.829872</long>
+		</centroid>
+		<imgFileName>Os-39.gif</imgFileName>
+		<description>North of Parking Lot J.</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-53</id>
+		<name>Rose Garden</name>
+		<centroid>
+			<lat>34.060812</lat>
+			<long>-117.8203015</long>
+		</centroid>
+		<imgFileName>Os-53.gif</imgFileName>
+		<description>North of Japanese Garden and NorthEast of Engineering Laboratories (Bldg. 17).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-54</id>
+		<name>Japanese Garden</name>
+		<centroid>
+			<lat>34.0598125</lat>
+			<long>-117.82036999999998</long>
+		</centroid>
+		<imgFileName>Os-54.gif</imgFileName>
+		<description>NorthWest of Classroom/Laboratory/Administration (C/L/A) (Bldg. 98).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-56</id>
+		<name>BioTrek Ethnobotany Garden</name>
+		<centroid>
+			<lat>34.057123499999996</lat>
+			<long>-117.82651150000001</long>
+		</centroid>
+		<imgFileName>Os-56.gif</imgFileName>
+		<description>South of College of Agriculture (Bldg. 2).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-999</id>
+		<name>Bronco Commons</name>
+		<centroid>
+			<lat>34.0552254</lat>
+			<long>-117.8202104</long>
+		</centroid>
+		<imgFileName>Os-999.jpg</imgFileName>
+		<description>NorthWest of Kellogg Gymnasium (Bldg. 43) and South of Bronco Bookstore (Bldg. 66).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-8</id>
+		<name>Soccer Field</name>
+		<centroid>
+			<lat>34.053089</lat>
+			<long>-117.81838483</long>
+		</centroid>
+		<imgFileName>Os-8.jpg</imgFileName>
+		<description>North of Parking Lot K and South of Kellogg Gymnasium (Bldg. 43).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-1</id>
+		<name>Tennis Courts</name>
+		<centroid>
+			<lat>34.0530072857</lat>
+			<long>-117.820584857142</long>
+		</centroid>
+		<imgFileName>Os-1.gif</imgFileName>
+		<description>West of Soccer Field and NorthWest of Parking Lot K.</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-4</id>
+		<name>Scolinos Baseball Field</name>
+		<centroid>
+			<lat>34.05366</lat>
+			<long>-117.81586</long>
+		</centroid>
+		<imgFileName>Os-4.gif</imgFileName>
+		<description>NorthEast of Kellogg Track and Infield.</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-15</id>
+		<name>Outdoor Basketball Courts</name>
+		<centroid>
+			<lat>34.05377</lat>
+			<long>-117.82038</long>
+		</centroid>
+		<imgFileName>Os-15.gif</imgFileName>
+		<description>West of Kellogg Gymnasium and North of Tennis Courts.</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-45</id>
+		<name>Agriscapes Pumpkin Field</name>
+		<centroid>
+			<lat>34.04974</lat>
+			<long>-117.81884</long>
+		</centroid>
+		<imgFileName>Os-45.gif</imgFileName>
+		<description>North of Agriscapes/Farm Store (Bldg. 211) and West of University Village (Bldg. 200).</description>
+	</openSpace>
+	<openSpace>
+		<id>Os-2</id>
+		<name>Kellogg Track and Infield</name>
+		<centroid>
+			<lat>34.05222</lat>
+			<long>-117.81704</long>
+		</centroid>
+		<imgFileName>Os-2.gif</imgFileName>
+		<description>NorthEast of Parking Lot K and East of Soccer Field.</description>
+	</openSpace>
+    <openSpace>
+		<id>Os-888</id>
+		<name>University Park</name>
+		<centroid>
+			<lat>34.05658</lat>
+			<long>-117.82092</long>
+		</centroid>
+		<imgFileName>Os-888.gif</imgFileName>
+		<description>East of Bronco Student Center and North of Bronco Bookstore.</description>
+	</openSpace>
+</structure>

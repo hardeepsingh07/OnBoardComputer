@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="building"
+            type="com.example.hardeepsingh.onboardcomputer.models.Building" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/itemview"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:weightSum="2">
+
+        <!--Building Number Layout-->
+        <TextView
+            android:id="@+id/itemBuildingNumber"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:background="@drawable/itemviewround"
+            android:gravity="center"
+            android:hint="1"
+            android:text="@{building.number}"
+            android:textColor="@color/colorIcons"
+            android:textSize="25dp"
+            android:typeface="serif" />
+
+
+        <!--Building Info Container-->
+        <LinearLayout
+            android:id="@+id/info_container"
+            android:layout_weight="1.6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorDivider"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:id="@+id/itemBuildingName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:hint="Building 1"
+                android:text="@{building.name}"
+                android:textSize="22sp"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/itemBuildingDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:hint="Building Description"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@{building.description}"
+                android:textSize="16dp"
+                android:typeface="serif" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+
+    <!--<RelativeLayout android:id="@+id/view"--><!--xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_alignParentEnd="true"--><!--android:layout_alignParentTop="true"--><!--android:orientation="horizontal"--><!--android:padding="5dp">-->
+
+    <!--<TextView--><!--android:id="@+id/itemBuildingName"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:background="@drawable/itemview"--><!--android:gravity="center_horizontal|left"--><!--android:paddingLeft="85dp"--><!--android:paddingTop="9dp"--><!--android:hint="Building 1"--><!--android:text="@{building.name}"--><!--android:textSize="22dp"--><!--android:typeface="serif"--><!--android:layout_alignParentTop="true"--><!--android:layout_alignParentStart="true" />-->
+
+    <!--<TextView--><!--android:id="@+id/itemBuildingDescription"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:background="@drawable/itemview"--><!--android:gravity="center|left"--><!--android:paddingLeft="15dp"--><!--android:maxLines="1"--><!--android:ellipsize="end"--><!--android:hint="Building Description"--><!--android:text="@{building.description}"--><!--android:textSize="17dp"--><!--android:typeface="serif"--><!--android:layout_marginRight="20dp"--><!--android:layout_marginBottom="8dp"--><!--android:layout_alignBottom="@+id/itemBuildingName"--><!--android:layout_alignEnd="@+id/itemBuildingName"--><!--android:layout_toEndOf="@+id/itemBuildingNumber" />-->
+
+    <!--<TextView--><!--android:id="@+id/itemBuildingNumber"--><!--android:layout_width="70dp"--><!--android:layout_height="70dp"--><!--android:layout_alignParentStart="true"--><!--android:layout_alignParentTop="true"--><!--android:background="@drawable/itemviewround"--><!--android:gravity="center"--><!--android:hint="1"--><!--android:text="@{building.number}"--><!--android:textColor="@color/colorIcons"--><!--android:textSize="25dp"--><!--android:typeface="serif" />--><!--</RelativeLayout>-->

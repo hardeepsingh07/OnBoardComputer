@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure type="parking lots">
+	<header>
+		<img_url>../common/structure_imgs/</img_url>
+	</header>
+	<parkingLot>
+		<id>Pk-J</id>
+		<name>Parking Lot J</name>
+		<centroid>
+			<lat>34.0574015</lat>
+			<long>-117.82841849999998</long>
+		</centroid>
+		<imgFileName>Pk-J.gif</imgFileName>
+		<description>
+			<locationInfo>West of College of Environmental Design (Bldg. 7) and NorthWest of Health Services (Bldg. 46).</locationInfo>
+			<restriction>
+				<facultyStaff>J1-J2: 7.00am - 5.30pm; J3-J8</facultyStaff>
+				<student>J1-J2: After 5.30pm; J3-J8</student>
+				<visitor>J1-J2: After 5.30pm; J3-J8</visitor>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-M</id>
+		<name>Parking Lot M</name>
+		<centroid>
+			<lat>34.0554865</lat>
+			<long>-117.82913199999997</long>
+		</centroid>
+		<imgFileName>Pk-M.gif</imgFileName>
+		<description>
+			<locationInfo>South of Parking Lot J and South West of College of Environmental Design (Bldg. 7).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-N</id>
+		<name>Parking Lot N</name>
+		<centroid>
+			<lat>34.056195</lat>
+			<long>-117.818856</long>
+		</centroid>
+		<imgFileName>Pk-N.jpg</imgFileName>
+		<description>
+			<locationInfo>On Bronco Way Across from the Child Care Center (Building 116)</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-A</id>
+		<name>Parking Lot A</name>
+		<centroid>
+			<lat>34.060514500000004</lat>
+			<long>-117.82474500000001</long>
+		</centroid>
+		<imgFileName>Pk-A.gif</imgFileName>
+		<description>
+			<locationInfo>North of Building One (Bldg. 1).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-L</id>
+		<name>Parking Lot L</name>
+		<centroid>
+			<lat>34.0554485</lat>
+			<long>-117.82537500000001</long>
+		</centroid>
+		<imgFileName>Pk-L.gif</imgFileName>
+		<description>
+			<locationInfo>South of Kellogg West Main Lodge (Bldg. 77) and NorthWest of Collins College of Hospitality Management (Bldg. 79).</locationInfo>
+			<restriction>
+				<specialPermission>Kellogg West permit Only</specialPermission>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F8</id>
+		<name>Parking Lot F8</name>
+		<centroid>
+			<lat>34.05908600000001</lat>
+			<long>-117.81715399999999</long>
+		</centroid>
+		<imgFileName>Pk-F8.gif</imgFileName>
+		<description>
+			<locationInfo>South of Parking Structure (Bldg. 106).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+				<specialPermission>Presidential, VIP and Visitor</specialPermission>
+				<oneHour/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F9</id>
+		<name>Parking Lot F9</name>
+		<centroid>
+			<lat>34.060001500000006</lat>
+			<long>-117.81562800000002</long>
+		</centroid>
+		<imgFileName>Pk-F9.gif</imgFileName>
+		<description>
+			<locationInfo>South of Parking Structure (Bldg. 106).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F10</id>
+		<name>Parking Lot F10</name>
+		<centroid>
+			<lat>34.0611035</lat>
+			<long>-117.81459449999998</long>
+		</centroid>
+		<imgFileName>Pk-F10.gif</imgFileName>
+		<description>
+			<locationInfo>East of Police and Parking Services (Bldg. 109).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F5</id>
+		<name>Parking Lot F5</name>
+		<centroid>
+			<lat>34.061605</lat>
+			<long>-117.81550200000002</long>
+		</centroid>
+		<imgFileName>Pk-F5.gif</imgFileName>
+		<description>
+			<locationInfo>NorthEast of Parking Structure (Bldg. 106).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F3</id>
+		<name>Parking Lot F3</name>
+		<centroid>
+			<lat>34.062021</lat>
+			<long>-117.81634100000001</long>
+		</centroid>
+		<imgFileName>Pk-F3.gif</imgFileName>
+		<description>
+			<locationInfo>North of Parking Lot F4 and South of Recreation/Maintenance (Bldg. 71).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F1</id>
+		<name>Parking Lot F1</name>
+		<centroid>
+			<lat>34.062265499999995</lat>
+			<long>-117.8169405</long>
+		</centroid>
+		<imgFileName>Pk-F1.gif</imgFileName>
+		<description>
+			<locationInfo>SouthEast of Residence Hall, Aliso (Bldg. 23).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F2</id>
+		<name>Parking Lot F2</name>
+		<centroid>
+			<lat>34.061516</lat>
+			<long>-117.81766900000002</long>
+		</centroid>
+		<imgFileName>Pk-F2.gif</imgFileName>
+		<description>
+			<locationInfo>South of Residence Hall, Alamitos (Bldg. 22) and East of Student Affairs Information Technology Services (Bldg. 91).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-F4</id>
+		<name>Parking Lot F4</name>
+		<centroid>
+			<lat>34.061075499999994</lat>
+			<long>-117.817345</long>
+		</centroid>
+		<imgFileName>Pk-F4.gif</imgFileName>
+		<description>
+			<locationInfo>North of Parking Structure (Bldg. 106).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<visitor/>
+				<disabled/>
+				<oneHour/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-H</id>
+		<name>Parking Lot H</name>
+		<centroid>
+			<lat>34.060936</lat>
+			<long>-117.81884400000001</long>
+		</centroid>
+		<imgFileName>Pk-H.gif</imgFileName>
+		<description>
+			<locationInfo>South of Student Affairs Information Technology Services (Bldg. 91).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-E2</id>
+		<name>Parking Lot E2</name>
+		<centroid>
+			<lat>34.060717000000004</lat>
+			<long>-117.81267899999997</long>
+		</centroid>
+		<imgFileName>Pk-E2.gif</imgFileName>
+		<description>
+			<locationInfo>NorthWest of Interim Design Center (Bldg. 89).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-E1</id>
+		<name>Parking Lot E1</name>
+		<centroid>
+			<lat>34.061491</lat>
+			<long>-117.81155000000003</long>
+		</centroid>
+		<imgFileName>Pk-E1.gif</imgFileName>
+		<description>
+			<locationInfo>NorthEast of Parking Lot E2.</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<!--
+	<parkingLot>
+		<id>Pk-K</id>
+		<name>Parking Lot K</name>
+		<centroid>
+			<lat>34.051363</lat>
+			<long>-117.818432</long>
+		</centroid>
+		<imgFileName>Pk-K.gif</imgFileName>
+		<description>
+			<locationInfo>CLOSED (under construction). SouthEast of I Poly High School (Bldg. 128).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	-->
+	<parkingLot>
+		<id>Pk-B</id>
+		<name>Parking Lot B</name>
+		<centroid>
+			<lat>34.0523835</lat>
+			<long>-117.81551349999998</long>
+		</centroid>
+		<imgFileName>Pk-B.gif</imgFileName>
+		<description>
+			<locationInfo>East of Parking Lot K.</locationInfo>
+			<restriction>
+				<specialPermission>Designated accessible parking for Kellogg Gym</specialPermission>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<resident/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-P</id>
+		<name>Parking Lot P</name>
+		<centroid>
+			<lat>34.054716</lat>
+			<long>-117.816185</long>
+		</centroid>
+		<imgFileName>Pk-P.jpg</imgFileName>
+		<description>
+			<locationInfo>East of Residence Suites (Bldg. 60).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<resident/>
+				<noDisabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-O</id>
+		<name>Parking Lot O</name>
+		<centroid>
+			<lat>34.050251</lat>
+			<long>-117.81462099999997</long>
+		</centroid>
+		<imgFileName>Pk-O.gif</imgFileName>
+		<description>
+			<locationInfo>SouthEast Center for Training, Technology and Incubation (Bldg. 220A).</locationInfo>
+			<restriction>
+				<specialPermission>CTTI permit only</specialPermission>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-I</id>
+		<name>Parking Lot I</name>
+		<centroid>
+			<lat>34.0488775</lat>
+			<long>-117.81956100000002</long>
+		</centroid>
+		<imgFileName>Pk-I.gif</imgFileName>
+		<description>
+			<locationInfo>North of Agriscapes/Farm Store (Bldg. 211).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-U</id>
+		<name>Parking Lot U</name>
+		<centroid>
+			<lat>34.048618</lat>
+			<long>-117.81760750000002</long>
+		</centroid>
+		<imgFileName>Pk-U.gif</imgFileName>
+		<description>
+			<locationInfo>West of University Village (Bldg. 200). </locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<oneHour/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-R</id>
+		<name>Parking Lot R</name>
+		<centroid>
+			<lat>34.063514999999995</lat>
+			<long>-117.825619</long>
+		</centroid>
+		<imgFileName>Pk-R.gif</imgFileName>
+		<description>
+			<locationInfo>NorthWest of Kellogg House Pomona (Bldg. 112).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<!--
+	<parkingLot>
+		<id>Pk-C</id>
+		<name>Parking Lot C</name>
+		<centroid>
+			<lat>34.058834</lat>
+			<long>-117.81916050000002</long>
+		</centroid>
+		<imgFileName>Pk-C.gif</imgFileName>
+		<description>
+			<locationInfo>South of Classroom/Laboratory/Administration (C/L/A) (Bldg. 98).</locationInfo>
+			<restriction>
+				<facultyStaff>7.00am - 5.30pm</facultyStaff>
+				<student>After 5.30pm</student>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	-->
+	<parkingLot>
+		<id>Pk-G</id>
+		<name>Parking Lot G</name>
+		<centroid>
+			<lat>34.055646</lat>
+			<long>-117.8197220769230</long>
+		</centroid>
+		<imgFileName>Pk-G.jpg</imgFileName>
+		<description>
+			<locationInfo>SouthEast of Bronco Bookstore and SouthWest of Child Care Center.</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<resident/>
+				<visitor/>
+				<oneHour/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Bg-106</id>
+		<name>Building 106: Parking Structure</name>
+		<centroid>
+			<lat>34.060415000000006</lat>
+			<long>-117.81702800000001</long>
+		</centroid>
+		<imgFileName>Bg-106.gif</imgFileName>
+		<description>
+			<locationInfo>East of Voorhis Alumni Park and West of Police and Parking Services (Bldg. 109).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+				<visitor/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-Q</id>
+		<name>Parking Lot Q</name>
+		<centroid>
+			<lat>34.054818</lat>
+			<long>-117.816638</long>
+		</centroid>
+		<imgFileName>Pk-Q.jpg</imgFileName>
+		<description>
+			<locationInfo>East of Residence Suites (Bldg. 60).</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<resident/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-Overflow</id>
+		<name>Overflow Parking Lot</name>
+		<centroid>
+            <lat>34.053374</lat>
+            <long>-117.809344</long>
+		</centroid>
+		<imgFileName>Pk-Overflow.jpg</imgFileName>
+		<description>
+			<locationInfo>SouthEast of American Red Cross</locationInfo>
+			<restriction>
+				<facultyStaff/>
+				<student/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-Overflow2</id>
+		<name>Unpaved Overflow Lot</name>
+		<centroid>
+            <lat>34.049702</lat>
+            <long>-117.813678</long>
+		</centroid>
+		<imgFileName>Pk-Overflow2.jpg</imgFileName>
+		<description>
+			<locationInfo>SouthEast of Center for Training, Technology and Incubation</locationInfo>
+			<restriction>
+				<student/>
+			</restriction>
+		</description>
+	</parkingLot>
+	<parkingLot>
+		<id>Pk-Structure-2</id>
+		<name>Parking Structure 2</name>
+		<centroid>
+			<lat>34.05142</lat>
+			<long>-117.81868</long>
+		</centroid>
+		<imgFileName>Pk-Structure-2.jpg</imgFileName>
+		<description>
+			<locationInfo>SouthEast of iPoly High School (Bldg. 128).</locationInfo>
+			<restriction>
+				<student/>
+				<visitor/>
+				<facultyStaff/>
+				<disabled/>
+			</restriction>
+		</description>
+	</parkingLot>
+</structure>

@@ -5,7 +5,8 @@ import android.speech.SpeechRecognizer;
 /**
  * Helper Methods for Speech Conversion
  *
- * @author hardeepsingh on March 29,2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * December 28,2018
  */
 public class SpeechUtil {
 

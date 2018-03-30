@@ -7,12 +7,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 /**
- * Volley Singleton
+ * Volley Singleton for Network Calls
  *
- * @author by hardeep.singh@mobileforming.com
- *         January 23, 2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * January 28,2018
  */
-
 public class VolleySingleton {
     private static VolleySingleton mInstance;
     private RequestQueue mRequestQueue;

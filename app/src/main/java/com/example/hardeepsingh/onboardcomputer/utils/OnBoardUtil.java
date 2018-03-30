@@ -23,9 +23,11 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
- * Created by devil on 11/22/17.
+ * Animation Util Class to Animate Launch, Destination and Route Panels
+ *
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * December 28,2018
  */
-
 public class OnBoardUtil {
     private static final String BUILDING = "building";
     private static final String ID = "id";

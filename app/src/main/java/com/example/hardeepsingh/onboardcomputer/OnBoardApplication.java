@@ -5,7 +5,14 @@ import android.app.Application;
 /**
  * Application class for OnBoardComputer
  *
- * @author hardeepsingh on 27,March,2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * December 28,2018
  */
 public class OnBoardApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        //If setup is required on App Start
+    }
 }

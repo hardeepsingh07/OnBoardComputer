@@ -10,10 +10,9 @@ import com.example.hardeepsingh.onboardcomputer.databinding.ActivityWaypointRout
 /**
  * Animation Util Class to Animate Launch, Destination and Route Panels
  *
- * @author by hardeep.singh@mobileforming.com
- *         March 27, 2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * March 28,2018
  */
-
 public class AnimationUtil {
 
     private static float translationX;

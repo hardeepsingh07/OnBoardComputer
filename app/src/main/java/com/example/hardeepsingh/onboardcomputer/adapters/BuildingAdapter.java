@@ -16,9 +16,11 @@ import com.example.hardeepsingh.onboardcomputer.models.Building;
 import java.util.ArrayList;
 
 /**
- * Created by Hardeep Singh on 7/19/17.
+ * Building data adapter with custom filter
+ *
+ * @author by Hardeep Singh (hardeepsingh@cpp.edu)
+ *         Januar 23, 2018
  */
-
 public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.BindingViewHolder> {
 
     private ArrayList<Building> originalList;

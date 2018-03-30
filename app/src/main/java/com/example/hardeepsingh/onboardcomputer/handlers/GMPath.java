@@ -22,10 +22,9 @@ import java.util.List;
 /**
  * Calculate GM Path
  *
- * @author by hardeep.singh@mobileforming.com
- *         January 23, 2018
+ * @author by Hardeep Singh (hardeepsingh@cpp.edu)
+ * January 23, 2018
  */
-
 public class GMPath {
 
     private List<LatLng> wayPoints = new ArrayList<>();
@@ -105,6 +104,7 @@ public class GMPath {
 
     /**
      * Create PolyLine Options from JsonObject of ArrayList
+     *
      * @param result
      * @return
      */
@@ -147,6 +147,7 @@ public class GMPath {
 
     /**
      * Create PolyLineOptions from File
+     *
      * @return
      */
 

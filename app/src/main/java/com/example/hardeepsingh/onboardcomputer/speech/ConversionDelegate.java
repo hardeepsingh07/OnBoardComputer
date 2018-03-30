@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * Provide Results Callback from Speech To Text or Text to Speech Implementation
  *
- * @author hardeepsingh on March 29,2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * December 28,2018
  */
 public interface ConversionDelegate {
 

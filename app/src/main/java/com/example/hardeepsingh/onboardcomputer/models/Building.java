@@ -7,9 +7,11 @@ import java.io.Serializable;
 import com.example.hardeepsingh.onboardcomputer.BR;
 
 /**
- * Created by Hardeep Singh on 7/19/17.
+ * Building Data
+ *
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * December 28,2018
  */
-
 public class Building extends BaseObservable implements Serializable {
 
     private String id;

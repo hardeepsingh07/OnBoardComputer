@@ -13,7 +13,8 @@ import com.google.android.gms.location.LocationServices;
 /**
  * Google Location Provider Engine
  *
- * @author hardeepsingh on March 28,2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * March 28,2018
  */
 public class GoogleLocationEngine {
 

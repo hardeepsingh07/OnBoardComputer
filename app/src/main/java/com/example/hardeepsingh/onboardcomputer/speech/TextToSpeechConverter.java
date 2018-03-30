@@ -11,7 +11,8 @@ import java.util.Locale;
 /**
  * Text to Speech Helper class
  *
- * @author hardeepsingh on March 29,2018
+ * @author Hardeep Singh (hardeepsingh@cpp.edu)
+ * March 28,2018
  */
 public class TextToSpeechConverter {
 

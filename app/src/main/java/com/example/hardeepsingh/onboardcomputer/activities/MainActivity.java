@@ -48,6 +48,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+
+/**
+ * Main class handle building selection with multiple inputs
+ *
+ * @author by Hardeep Singh (hardeepsingh@cpp.edu)
+ * March 23, 2018
+ */
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, OnItemClickListener, ConversionDelegate {
 
     private static final int REQ_CODE_SPEECH_INPUT_W_DIALOG = 200;
@@ -157,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void showActivityDialog() {
-        if(selectedBuilding != null) {
+        if (selectedBuilding != null) {
             CharSequence colors[] = new CharSequence[]{"Location Update with Google Path Generator",
                     "Simulate Location Updates with Google Path Generator",
                     "Location Update with WayPoints provided by File",
@@ -369,6 +376,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     /**
      * Handle Speech Result with Google Dialog sent by onActivityResult
+     *
      * @param speechResult
      */
     public void cipherSpeechInput(String speechResult) {
@@ -386,6 +394,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     /**
      * Handle Without Dialog Speech Results for Alert Dialog
+     *
      * @param results
      */
     public void handleAlertDialogSpeechResults(ArrayList<String> results) {

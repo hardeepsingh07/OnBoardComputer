@@ -42,6 +42,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Way-points Route class handle navigation
+ *
+ * @author by Hardeep Singh (hardeepsingh@cpp.edu)
+ * March 23, 2018
+ */
 public class WaypointRoute extends FragmentActivity
         implements OnMapReadyCallback, GoogleLocationEngine.LocationUpdateListener {
 

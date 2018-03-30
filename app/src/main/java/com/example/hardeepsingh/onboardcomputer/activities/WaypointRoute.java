@@ -33,6 +33,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.android.SphericalUtil;
 
@@ -67,6 +68,10 @@ public class WaypointRoute extends FragmentActivity
     private String wayPointFileName;
     private Runnable runnable;
     private static Handler handler;
+
+    private PolylineOptions transitPolyOptions;
+    private Polyline transitPolyLine;
+    private List<LatLng> userMovementPoints = new ArrayList<>();
 
     public static Intent createIntent(Context context, Building building, String fileName, boolean simulate) {
         Intent intent = new Intent(context, WaypointRoute.class);
@@ -138,6 +143,7 @@ public class WaypointRoute extends FragmentActivity
         //Stop Handler and Remove Calls
         if (handler != null && simulate) {
             handler.removeCallbacks(runnable);
+            removeTransitPolyLine();
         }
     }
 
@@ -199,7 +205,7 @@ public class WaypointRoute extends FragmentActivity
 
         //Setup Map Extracting User Location (Origin) and Building Location (Destination)
         if (startLocation == null) {
-            setUpInitialTransit(location);
+            setUpWithInitialLocation(location);
         }
 
         //If InProgress and not simulating, Track user location and update marker
@@ -207,16 +213,41 @@ public class WaypointRoute extends FragmentActivity
             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
             updateMarker(latLng);
             destinationReached(latLng);
+            createUpdateTransitPolyLine(latLng);
 
             //Update Duration and Distance
             updateProgressBindings();
         }
     }
 
-    public void setUpInitialTransit(Location currentLocation) {
+    public void createUpdateTransitPolyLine(LatLng latLng) {
+        if(transitPolyLine == null && transitPolyOptions == null) {
+            transitPolyOptions = new PolylineOptions();
+            transitPolyOptions.width(15);
+            transitPolyOptions.color(Color.GREEN);
+            transitPolyLine = map.addPolyline(transitPolyOptions);
+            userMovementPoints.add(latLng);
+            transitPolyLine.setPoints(userMovementPoints);
+        } else {
+            userMovementPoints.add(latLng);
+            transitPolyLine.setPoints(userMovementPoints);
+        }
+    }
+
+    public void removeTransitPolyLine() {
+        userMovementPoints.clear();
+        transitPolyLine.remove();
+
+        //To trigger recreate, reset TransitPolyLine & TransitPolyOptions
+        transitPolyLine = null;
+        transitPolyOptions = null;
+    }
+
+    public void setUpWithInitialLocation(Location currentLocation) {
         if (building != null) {
             LatLng source = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
             LatLng destination = new LatLng(building.getLatitude(), building.getLongitude());
+
 
             //Store Destination Location for Distance Calculation
             this.destinationLocation = OnBoardUtil.convertCoOrdinationToLocation(building.getLatitude(), building.getLongitude());
@@ -228,7 +259,7 @@ public class WaypointRoute extends FragmentActivity
             if (TextUtils.isEmpty(wayPointFileName)) {
                 generateDirections(source, destination);
             } else {
-                createPolyOptions(OnBoardUtil.readCordinatesFromFile(this, wayPointFileName), null);
+                createPathPolyOptions(OnBoardUtil.readCordinatesFromFile(this, wayPointFileName), null);
             }
         } else {
             Toast.makeText(this, "No Building Data Found!", Toast.LENGTH_SHORT).show();
@@ -245,7 +276,7 @@ public class WaypointRoute extends FragmentActivity
             @Override
             public void onDataReceived(JSONObject jsonObject) {
                 PolylineOptions polylineOptions = gmPath.generatePathPolyLine(gmPath.parseDirectionJSON(jsonObject));
-                createPolyOptions(gmPath.getWayPoints(), polylineOptions);
+                createPathPolyOptions(gmPath.getWayPoints(), polylineOptions);
             }
         }, this);
     }
@@ -253,7 +284,7 @@ public class WaypointRoute extends FragmentActivity
     /**
      * Design the Map
      */
-    public void createPolyOptions(List<LatLng> points, PolylineOptions polylineOptions) {
+    public void createPathPolyOptions(List<LatLng> points, PolylineOptions polylineOptions) {
         PolylineOptions options;
         wayPoints.clear();
         if (!TextUtils.isEmpty(wayPointFileName)) {
@@ -266,7 +297,6 @@ public class WaypointRoute extends FragmentActivity
             wayPoints.addAll(points);
             options = polylineOptions;
         }
-
         makePolyLine(options);
     }
 
@@ -343,7 +373,7 @@ public class WaypointRoute extends FragmentActivity
         LatLngBounds.Builder boundsBuilder = new LatLngBounds.Builder();
         for (LatLng latLngPoint : wayPoints)
             boundsBuilder.include(latLngPoint);
-        int routePadding = 700;
+        int routePadding = 300;
         LatLngBounds latLngBounds = boundsBuilder.build();
         map.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, routePadding));
     }
@@ -364,8 +394,9 @@ public class WaypointRoute extends FragmentActivity
 
                 if (i < wayPoints.size()) {
                     LatLng current = wayPoints.get(i);
-                    currentMarker.setPosition(current);
-                    animateToMarker(currentMarker.getPosition());
+                    updateMarker(current);
+                    createUpdateTransitPolyLine(current);
+
                     lastLocation = OnBoardUtil.convertLatLngToLocation(current);
                     updateProgressBindings();
                     destinationReached(current);

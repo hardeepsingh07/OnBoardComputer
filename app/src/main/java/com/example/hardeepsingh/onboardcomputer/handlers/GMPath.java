@@ -38,7 +38,8 @@ public class GMPath {
         String str_dest = "destination=" + destination.latitude + "," + destination.longitude;
         String sensor = "sensor=false";
         String mode = "mode=cycling";
-        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode;
+        String apiKey = "key=AIzaSyBtE4iJVK9AjnvmbiKg_5Y42Q5JcPXkjYQ";
+        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode + "&" + apiKey;
         String output = "json";
 
         // Building the url to the web service

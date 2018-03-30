@@ -327,6 +327,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (speechToTextConverter != null) {
                     hideProgressBar();
                     speechToTextConverter.stopListening(speechRecognizer);
+                    textToSpeechConverter.finish();
                 }
             }
         });

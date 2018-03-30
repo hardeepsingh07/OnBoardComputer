@@ -99,7 +99,7 @@ public class SpeechToTextConverter {
         }
 
         public void onRmsChanged(float rmsdB) {
-            Log.d(TAG, "onRmsChanged");
+            //Log.d(TAG, "onRmsChanged");
         }
 
         public void onBufferReceived(byte[] buffer) {

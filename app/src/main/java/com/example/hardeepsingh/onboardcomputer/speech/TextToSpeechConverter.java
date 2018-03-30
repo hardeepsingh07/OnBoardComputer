@@ -25,8 +25,13 @@ public class TextToSpeechConverter {
         this.activity = (Activity) conversionDelegate;
     }
 
-
-    public TextToSpeechConverter speakMessage(final String message) {
+    /**
+     * Speak Message and Attach Progress Callback
+     * @param message
+     * @param speechDialogType
+     * @return
+     */
+    public TextToSpeechConverter speakMessage(final String message, final SpeechDialogType speechDialogType) {
         textToSpeech = new TextToSpeech(activity, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -36,7 +41,7 @@ public class TextToSpeechConverter {
                     textToSpeech.setSpeechRate(1f);
                     textToSpeech.setLanguage(Locale.UK);
                     textToSpeech.speak(message, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
-                    textToSpeech.setOnUtteranceProgressListener(new DeliveryProgressHandler());
+                    textToSpeech.setOnUtteranceProgressListener(new DeliveryProgressHandler(speechDialogType));
                 } else {
                     conversionDelegate.onErrorOccurred(SpeechUtil.FAILED_TO_INITILIZE_TTS_ENGINE);
                 }
@@ -46,6 +51,9 @@ public class TextToSpeechConverter {
         return this;
     }
 
+    /**
+     * Finish Speeching the Message and Shutdown
+     */
     public void finish() {
         if (textToSpeech != null) {
             textToSpeech.stop();
@@ -53,7 +61,16 @@ public class TextToSpeechConverter {
         }
     }
 
+    /**
+     * Hanlde UtteranceProgressListener Callbacks
+     */
     public class DeliveryProgressHandler extends UtteranceProgressListener {
+
+        private SpeechDialogType speechDialogType;
+
+        public DeliveryProgressHandler(SpeechDialogType speechDialogType) {
+            this.speechDialogType = speechDialogType;
+        }
 
         @Override
         public void onStart(String utteranceId) {
@@ -62,7 +79,7 @@ public class TextToSpeechConverter {
 
         @Override
         public void onDone(String utteranceId) {
-            conversionDelegate.onCompletion();
+            conversionDelegate.onCompletion(speechDialogType);
         }
 
         @Override

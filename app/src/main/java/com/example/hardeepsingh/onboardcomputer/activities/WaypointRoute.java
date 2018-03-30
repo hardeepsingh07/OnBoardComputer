@@ -168,6 +168,12 @@ public class WaypointRoute extends FragmentActivity
         binding.timeRemainingText.setText(duration);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
     /**
      * Map and Location Updates
      *

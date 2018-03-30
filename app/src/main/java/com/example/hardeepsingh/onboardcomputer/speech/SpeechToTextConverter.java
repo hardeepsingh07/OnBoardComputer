@@ -20,9 +20,7 @@ import java.util.Locale;
  */
 public class SpeechToTextConverter {
 
-    private ArrayList<String> data;
-    private ConversionDelegate conversionDelegate;
-    private SpeechRecognizer speechRecognizer;
+    private static ConversionDelegate conversionDelegate;
     private Activity activity;
 
     public SpeechToTextConverter(ConversionDelegate conversionDelegate) {
@@ -30,26 +28,50 @@ public class SpeechToTextConverter {
         this.activity = (Activity) conversionDelegate;
     }
 
-    public SpeechToTextConverter speechWithoutDialog() {
-        CustomRecognitionListener listener = new CustomRecognitionListener();
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(activity);
-        speechRecognizer.setRecognitionListener(listener);
-        return this;
-    }
-
+    /**
+     * Start Speech Recognition Dialog
+     * @param requestCode
+     */
     public void speechWithDialog(int requestCode) {
         activity.startActivityForResult(getSpeechIntent(), requestCode);
     }
 
 
-    public void startListening() {
-        speechRecognizer.startListening(getSpeechIntent());
+    /**
+     * Listen without Dialog for specified SpeechRecognizer
+     *
+     * @param speechRecognizer
+     */
+    public void startListening(final SpeechRecognizer speechRecognizer) {
+        if (speechRecognizer != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    speechRecognizer.startListening(getSpeechIntent());
+                }
+            });
+        }
     }
 
-    public void stopListening() {
-        speechRecognizer.stopListening();
+    /**
+     * Stop Listening for specified SpeechRecognizer
+     * @param speechRecognizer
+     */
+    public void stopListening(final SpeechRecognizer speechRecognizer) {
+        if (speechRecognizer != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    speechRecognizer.stopListening();
+                }
+            });
+        }
     }
 
+    /**
+     * Generate Speech Recognization Intent to start service or dialog activity
+     * @return
+     */
     public Intent getSpeechIntent() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -60,7 +82,11 @@ public class SpeechToTextConverter {
         return intent;
     }
 
-    class CustomRecognitionListener implements RecognitionListener {
+
+    /**
+     * Handle Recognition Listener Callbacks
+     */
+    public static class CustomRecognitionListener implements RecognitionListener {
         private static final String TAG = "RecognitionListener";
 
         public void onReadyForSpeech(Bundle params) {
@@ -89,9 +115,8 @@ public class SpeechToTextConverter {
         }
 
         public void onResults(Bundle results) {
-            String str = new String();
             Log.d(TAG, "onResults " + results);
-            data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+            ArrayList<String> data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
             conversionDelegate.onSuccess(data);
         }
 
@@ -102,8 +127,6 @@ public class SpeechToTextConverter {
         public void onEvent(int eventType, Bundle params) {
             Log.d(TAG, "onEvent " + eventType);
         }
-
-
     }
 
 

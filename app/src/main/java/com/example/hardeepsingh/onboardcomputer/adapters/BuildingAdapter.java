@@ -3,6 +3,7 @@ package com.example.hardeepsingh.onboardcomputer.adapters;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.Bindin
 
     @Override
     public void onBindViewHolder(BuildingAdapter.BindingViewHolder holder, int position) {
-        final Building building = originalList.get(position);
+        final Building building = filteredList.get(position);
         ViewDataBinding viewDataBinding = holder.getViewDataBinding();
         viewDataBinding.setVariable(BR.building, building);
         viewDataBinding.getRoot().setOnClickListener(new View.OnClickListener() {
@@ -75,8 +76,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.Bindin
             filteredList.addAll(originalList);
         } else{
             text = text.toLowerCase();
-            for(Building b: originalList){
-                if(b.getFullName().trim().toLowerCase().contains(text)){
+            for(Building b: originalList) {
+                if(b.getNumber().trim().toLowerCase().contains(text)){
                     filteredList.add(b);
                 }
             }

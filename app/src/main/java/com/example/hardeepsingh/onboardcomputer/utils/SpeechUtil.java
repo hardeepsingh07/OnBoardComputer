@@ -1,10 +1,6 @@
 package com.example.hardeepsingh.onboardcomputer.utils;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.speech.SpeechRecognizer;
-
-import java.util.ArrayList;
 
 /**
  * Helper Methods for Speech Conversion

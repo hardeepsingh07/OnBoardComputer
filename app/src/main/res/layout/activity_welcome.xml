@@ -201,5 +201,12 @@
                 android:typeface="serif" />
         </LinearLayout>
 
+        <!--Progress Bar-->
+        <ProgressBar
+            android:id="@+id/progress_bar_main"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
     </RelativeLayout>
 </layout>

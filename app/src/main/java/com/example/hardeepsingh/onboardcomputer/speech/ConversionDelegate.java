@@ -11,7 +11,7 @@ public interface ConversionDelegate {
 
     void onSuccess(ArrayList<String> result);
 
-    void onCompletion();
+    void onCompletion(SpeechDialogType speechDialogType);
 
     void onErrorOccurred(String errorMessage);
 }

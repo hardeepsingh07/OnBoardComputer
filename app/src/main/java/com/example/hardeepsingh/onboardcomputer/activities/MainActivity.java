@@ -9,6 +9,7 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -23,13 +24,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hardeepsingh.onboardcomputer.R;
 import com.example.hardeepsingh.onboardcomputer.adapters.BuildingAdapter;
 import com.example.hardeepsingh.onboardcomputer.handlers.OnItemClickListener;
 import com.example.hardeepsingh.onboardcomputer.models.Building;
 import com.example.hardeepsingh.onboardcomputer.speech.ConversionDelegate;
+import com.example.hardeepsingh.onboardcomputer.speech.SpeechDialogType;
 import com.example.hardeepsingh.onboardcomputer.speech.SpeechToTextConverter;
 import com.example.hardeepsingh.onboardcomputer.speech.TextToSpeechConverter;
 import com.example.hardeepsingh.onboardcomputer.utils.OnBoardUtil;
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private RecyclerView recycleView;
     private TextView s_buildingName;
     private TextView s_buildingDescription;
+    private ProgressBar progressBar;
 
     private ArrayList<Building> buildings;
     private BuildingAdapter buildingAdapter;
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Building selectedBuilding;
     private SpeechToTextConverter speechToTextConverter;
     private TextToSpeechConverter textToSpeechConverter;
+    private SpeechRecognizer speechRecognizer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         recycleView = findViewById(R.id.building_recycle_view);
         s_buildingName = findViewById(R.id.main_building_name);
         s_buildingDescription = findViewById(R.id.main_building_description);
+        progressBar = findViewById(R.id.progress_bar_main);
         recycleView.setLayoutManager(gridLayoutManager);
         buildingAdapter = new BuildingAdapter(buildings, this);
         recycleView.setAdapter(buildingAdapter);
@@ -92,7 +99,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.mainMap);
         mapFragment.getMapAsync(this);
 
-        //Speech Classes
+        //Speech Recognition is Required to be used only from Main Thread so it has to be initialized here along with helper classes
+        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
+        SpeechToTextConverter.CustomRecognitionListener listener = new SpeechToTextConverter.CustomRecognitionListener();
+        speechRecognizer.setRecognitionListener(listener);
         speechToTextConverter = new SpeechToTextConverter(this);
         textToSpeechConverter = new TextToSpeechConverter(this);
     }
@@ -147,33 +157,37 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void showActivityDialog() {
-        CharSequence colors[] = new CharSequence[]{"Location Update with Google Path Generator",
-                "Simulate Location Updates with Google Path Generator",
-                "Location Update with WayPoints provided by File",
-                "Simulate Location Update with WayPoints provide by File"};
+        if(selectedBuilding != null) {
+            CharSequence colors[] = new CharSequence[]{"Location Update with Google Path Generator",
+                    "Simulate Location Updates with Google Path Generator",
+                    "Location Update with WayPoints provided by File",
+                    "Simulate Location Update with WayPoints provide by File"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick a Transit Type");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case 0:
-                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, false));
-                        break;
-                    case 1:
-                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, true));
-                        break;
-                    case 2:
-                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", false));
-                        break;
-                    case 3:
-                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", true));
-                        break;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Pick a Transit Type");
+            builder.setItems(colors, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which) {
+                        case 0:
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, false));
+                            break;
+                        case 1:
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, true));
+                            break;
+                        case 2:
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", false));
+                            break;
+                        case 3:
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", true));
+                            break;
+                    }
                 }
-            }
-        });
-        builder.show();
+            });
+            builder.show();
+        } else {
+            Toast.makeText(this, "Please make a building selection!!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -234,15 +248,34 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // handle item selection
         switch (item.getItemId()) {
             case R.id.action_search:
                 return true;
             case R.id.action_mic:
-                speechToTextConverter.speechWithDialog(REQ_CODE_SPEECH_INPUT_W_DIALOG);
+                //Deliver message then listen for speech input by starting a speech dialog
+                showProgressBar();
+                textToSpeechConverter.speakMessage("Speak Desired Building Number", SpeechDialogType.DIALOG);
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void showProgressBar() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    public void hideProgressBar() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
     }
 
     @Override
@@ -285,7 +318,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onDismiss(DialogInterface dialog) {
                 if (speechToTextConverter != null) {
-                    speechToTextConverter.stopListening();
+                    hideProgressBar();
+                    speechToTextConverter.stopListening(speechRecognizer);
                 }
             }
         });
@@ -307,8 +341,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         buttonNegative.setTypeface(Typeface.SERIF);
         buttonNegative.setTextSize(25);
 
-        //Speak Dialog Message
-        textToSpeechConverter.speakMessage(message);
+        //Speak Dialog Message and start listening when message delivered
+        showProgressBar();
+        textToSpeechConverter.speakMessage(message, SpeechDialogType.WITHOUT_DIALOG);
     }
 
     public void readBuildingsData() {
@@ -332,16 +367,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * Handle Speech Result with Google Dialog sent by onActivityResult
+     * @param speechResult
+     */
     public void cipherSpeechInput(String speechResult) {
         for (Building b : buildings) {
             if (b.getName().toLowerCase().contains(speechResult) || b.getFullName().toLowerCase().contains(speechResult)) {
                 selectedBuilding = b;
                 makeConfirmAlertDialog(this, "Did you say " + b.getName() + "?");
                 return;
+            } else {
+                showProgressBar();
+                textToSpeechConverter.speakMessage("I am sorry I didn't get that! Try again!", SpeechDialogType.DIALOG);
             }
         }
     }
 
+    /**
+     * Handle Without Dialog Speech Results for Alert Dialog
+     * @param results
+     */
     public void handleAlertDialogSpeechResults(ArrayList<String> results) {
         textToSpeechConverter.finish();
         if (results != null) {
@@ -354,11 +400,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     alert.dismiss();
                 }
             } else {
-                textToSpeechConverter.speakMessage("I am sorry I didn't get that! Try again!");
+                showProgressBar();
+                textToSpeechConverter.speakMessage("I am sorry I didn't get that! Try again!", SpeechDialogType.WITHOUT_DIALOG);
             }
         }
     }
-
 
     /**
      * Handle Result for Custom Speech Recognition
@@ -373,13 +419,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public void onCompletion() {
-        //Once Message is Delivered listen for response
-        speechToTextConverter.speechWithoutDialog().startListening();
+    public void onCompletion(SpeechDialogType speechDialogType) {
+        hideProgressBar();
+        switch (speechDialogType) {
+            case DIALOG:
+                speechToTextConverter.speechWithDialog(REQ_CODE_SPEECH_INPUT_W_DIALOG);
+                break;
+            case WITHOUT_DIALOG:
+                speechToTextConverter.startListening(speechRecognizer);
+                break;
+        }
     }
 
     @Override
     public void onErrorOccurred(String errorMessage) {
-
+        Log.e("SpeechRecognition: ", errorMessage);
     }
 }

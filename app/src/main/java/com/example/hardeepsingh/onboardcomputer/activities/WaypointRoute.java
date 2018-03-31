@@ -139,20 +139,21 @@ public class WaypointRoute extends FragmentActivity
     public void stopNavigation(View View) {
         inProgress = false;
         zoomRoute();
-        AnimationUtil.showLaunchPanel(binding);
 
         //Stop Handler and Remove Calls
         if (handler != null && simulate) {
             handler.removeCallbacks(runnable);
             removeTransitPolyLine();
         }
+
+        AnimationUtil.showLaunchPanel(binding);
     }
 
-    public void travelBack(View view) {
-        Collections.reverse(wayPoints);
-        AnimationUtil.showLaunchPanel(binding);
-        removeTransitPolyLine();
-    }
+//    public void travelBack(View view) {
+//        Collections.reverse(wayPoints);
+//        removeTransitPolyLine();
+//        AnimationUtil.showLaunchPanel(binding);
+//    }
 
     public void newSelection(View view) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -366,6 +367,8 @@ public class WaypointRoute extends FragmentActivity
             LatLng destination = wayPoints.get(wayPoints.size() - 1);
             if (SphericalUtil.computeDistanceBetween(current, destination) < 5) {
                 AnimationUtil.showDestinationPanel(binding);
+                binding.bName.setText(building.getFullName());
+                binding.bDescription.setText(building.getSurroundings());
             }
         }
     }

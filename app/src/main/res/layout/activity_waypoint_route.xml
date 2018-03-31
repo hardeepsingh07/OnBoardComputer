@@ -325,27 +325,26 @@
                 android:layout_marginEnd="8dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/go_back"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/bordercircularbutton"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:layout_alignParentStart="true"
-                    android:onClick="travelBack"
-                    android:text="Go Back"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:typeface="serif" />
+                <!--<Button-->
+                    <!--android:id="@+id/go_back"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:background="@drawable/bordercircularbutton"-->
+                    <!--android:backgroundTint="@color/colorPrimary"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:onClick="travelBack"-->
+                    <!--android:text="Go Back"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textStyle="normal"-->
+                    <!--android:typeface="serif" />-->
 
                 <Button
                     android:id="@+id/new_destination_destination"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/bordercircularbutton"
-                    android:layout_toRightOf="@+id/go_back"
                     android:text="@string/restart"
                     android:backgroundTint="@color/colorAccent"
                     android:onClick="newSelection"

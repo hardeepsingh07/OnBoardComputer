@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.hardeepsingh.onboardcomputer.R;
@@ -99,11 +100,12 @@ public class WaypointRoute extends FragmentActivity
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         if (googleLocationEngine != null) {
             googleLocationEngine.startLocationUpdate(this);
         }
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
@@ -112,6 +114,7 @@ public class WaypointRoute extends FragmentActivity
         if (googleLocationEngine != null) {
             googleLocationEngine.stopLocationUpdates(this);
         }
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     /**

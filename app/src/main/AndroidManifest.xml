@@ -28,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.WaypointRoute"/>
+        <activity android:name=".activities.WaypointRoute"
+            android:screenOrientation="landscape"/>
     </application>
 </manifest>

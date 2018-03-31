@@ -8,21 +8,18 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Interpolator;
-import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
 import com.example.hardeepsingh.onboardcomputer.R;
 import com.example.hardeepsingh.onboardcomputer.databinding.ActivityWaypointRouteBinding;
-import com.example.hardeepsingh.onboardcomputer.handlers.GMPath;
-import com.example.hardeepsingh.onboardcomputer.handlers.GoogleLocationEngine;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.GMPath;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.GoogleLocationEngine;
 import com.example.hardeepsingh.onboardcomputer.models.Building;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.ResponseInterface;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.SRPath;
 import com.example.hardeepsingh.onboardcomputer.utils.AnimationUtil;
 import com.example.hardeepsingh.onboardcomputer.utils.OnBoardUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -118,7 +115,7 @@ public class WaypointRoute extends FragmentActivity
     }
 
     /**
-     * Screen Actions
+     * Screen Actions Buttons for User Interactions
      *
      * @param view
      */
@@ -190,7 +187,7 @@ public class WaypointRoute extends FragmentActivity
     }
 
     /**
-     * Map and Location Updates
+     * Callback for onMapReady, notifies if google maps is ready to be used
      *
      * @param googleMap
      */
@@ -201,6 +198,13 @@ public class WaypointRoute extends FragmentActivity
         map.setMyLocationEnabled(true);
     }
 
+
+    /**
+     * Location Updates from FusedLocationProvider
+     * Initially only one location update is ccaptured till user  start the transit
+     *
+     * @param location
+     */
     @Override
     public void onLocationUpdate(Location location) {
         //Store user last location for Marker
@@ -246,6 +250,11 @@ public class WaypointRoute extends FragmentActivity
         transitPolyOptions = null;
     }
 
+    /**
+     * Setup Initial user location, this method only use very first user location update
+     * Actual location updates are no triggered till user start the transit
+     * @param currentLocation
+     */
     public void setUpWithInitialLocation(Location currentLocation) {
         if (building != null) {
             LatLng source = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
@@ -259,76 +268,80 @@ public class WaypointRoute extends FragmentActivity
 
             //If wayPointFile name doesn't exist, calculate the path else extract wayPoints from file
             if (TextUtils.isEmpty(wayPointFileName)) {
-                generateDirections(source, destination);
+                generateDirectionsGM(source, destination);
             } else {
-                createPathPolyOptions(OnBoardUtil.readCordinatesFromFile(this, wayPointFileName), null);
+                generateDirectionSR(source, destination);
             }
         } else {
             Toast.makeText(this, "No Building Data Found!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void generateDirections(LatLng source, LatLng destination) {
-        final GMPath gmPath = new GMPath();
-        String url = gmPath.generateURL(source, destination);
-        Log.i("Maps: ", "Direction URL: " + url);
+    /**
+     * Get Path from Server
+     * @param origin
+     * @param destination
+     */
+    public void generateDirectionSR(LatLng origin, LatLng destination) {
+        final SRPath srPath = new SRPath();
+        srPath.getDirectionJSON(this, origin, destination, new ResponseInterface() {
+            @Override
+            public void onDataReceived(JSONObject jsonObject) {
+                PolylineOptions polylineOptions = srPath.generatePathPolyLine(getBaseContext(), jsonObject, wayPointFileName);
+                createPathPolyOptions(srPath.getWayPoints(), polylineOptions);
+            }
+        });
+    }
 
-        // Make URL Call and Receive Data using ResponseInterface
-        gmPath.getDirectionJSON(url, new GMPath.ResponseInterface() {
+    /**
+     * Get Path From Google API
+     * @param origin
+     * @param destination
+     */
+    public void generateDirectionsGM(LatLng origin, LatLng destination) {
+        final GMPath gmPath = new GMPath();
+        gmPath.getDirectionJSON(this, origin, destination, new ResponseInterface() {
             @Override
             public void onDataReceived(JSONObject jsonObject) {
                 PolylineOptions polylineOptions = gmPath.generatePathPolyLine(gmPath.parseDirectionJSON(jsonObject));
                 createPathPolyOptions(gmPath.getWayPoints(), polylineOptions);
             }
-        }, this);
+        });
     }
 
     /**
-     * Design the Map
+     * Create Path poly Options
+     * This method use way-points to make poly options
+     *      Way-points can be generated by provided file or by google maps api
      */
     public void createPathPolyOptions(List<LatLng> points, PolylineOptions polylineOptions) {
-        PolylineOptions options;
         wayPoints.clear();
-        if (!TextUtils.isEmpty(wayPointFileName)) {
-            wayPoints.addAll(points);
-            options = new PolylineOptions();
-            options.addAll(wayPoints);
-            options.width(20);
-            options.color(Color.BLUE);
-        } else {
-            wayPoints.addAll(points);
-            options = polylineOptions;
-        }
-        makePolyLine(options);
+        wayPoints.addAll(points);
+        makePolyLine(polylineOptions);
     }
 
+    /**
+     * Draw Path Poly Lines
+     * Zoom on route to fit the route on entire screen
+     * Update bindings with building data
+     * Show launch panel
+     * Create Current Location Marker
+     * @param polylineOptions
+     */
     public void makePolyLine(PolylineOptions polylineOptions) {
         //Draw a Polyline
         if (wayPoints != null && polylineOptions != null) {
             map.addPolyline(polylineOptions);
-
-            //Zoom On Route
             zoomRoute();
-
-            //Update Bindings
             updateBindings();
-
-            //Show Launch Panel
             AnimationUtil.showLaunchPanel(binding);
-
-            //Add Marker To Start and End
             markStartAndEnd();
-
-            //Remove Progress Bar
             binding.progressBar.setVisibility(View.GONE);
-
-            //Place user marker on the route
             createMarker(new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude()));
         }
     }
 
     public void markStartAndEnd() {
-        //Add Marker To Start and END
         map.addMarker(new MarkerOptions().position(wayPoints.get(0))
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
                 .title("Start"));
@@ -341,10 +354,14 @@ public class WaypointRoute extends FragmentActivity
         return startLocation.distanceTo(endLocation);
     }
 
+    /**
+     * Check if destination is reached by checking if current and destination distance is less than 5 meter away
+     * @param current
+     */
     public void destinationReached(LatLng current) {
         if (wayPoints.size() > 0) {
             LatLng destination = wayPoints.get(wayPoints.size() - 1);
-            if (SphericalUtil.computeDistanceBetween(current, destination) < 1) {
+            if (SphericalUtil.computeDistanceBetween(current, destination) < 5) {
                 AnimationUtil.showDestinationPanel(binding);
             }
         }
@@ -367,9 +384,13 @@ public class WaypointRoute extends FragmentActivity
     }
 
     public void animateToMarker(LatLng latLng) {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
     }
 
+    /**
+     * Zoom on Route to fit the route perfectly in single view to give user an idea of transit
+     * Route Padding is used to leave space on left and right of path
+     */
     public void zoomRoute() {
         if (map == null || wayPoints == null || wayPoints.isEmpty()) return;
         LatLngBounds.Builder boundsBuilder = new LatLngBounds.Builder();
@@ -380,6 +401,11 @@ public class WaypointRoute extends FragmentActivity
         map.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, routePadding));
     }
 
+
+    /**
+     * Simulate the marker on route for demo purposes (Requires Simulate Flag)
+     * Animation Delay is used to cause a delay between current way-point to next way-point
+     */
     private void simulateMarker() {
         handler = new Handler();
         final long animationDelay = 1250;

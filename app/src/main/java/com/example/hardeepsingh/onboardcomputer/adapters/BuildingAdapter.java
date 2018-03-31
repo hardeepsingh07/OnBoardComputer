@@ -3,14 +3,13 @@ package com.example.hardeepsingh.onboardcomputer.adapters;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hardeepsingh.onboardcomputer.BR;
 import com.example.hardeepsingh.onboardcomputer.R;
-import com.example.hardeepsingh.onboardcomputer.handlers.OnItemClickListener;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.OnItemClickListener;
 import com.example.hardeepsingh.onboardcomputer.models.Building;
 
 import java.util.ArrayList;

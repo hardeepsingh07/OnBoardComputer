@@ -1,4 +1,4 @@
-package com.example.hardeepsingh.onboardcomputer.handlers;
+package com.example.hardeepsingh.onboardcomputer.pathHandlers;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -27,11 +27,8 @@ import java.util.List;
  */
 public class GMPath {
 
+    private static final String BASE_URL = "https://maps.googleapis.com/maps/api/directions/";
     private List<LatLng> wayPoints = new ArrayList<>();
-
-    public interface ResponseInterface {
-        void onDataReceived(JSONObject jsonObject);
-    }
 
     public String generateURL(LatLng origin, LatLng destination) {
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
@@ -40,14 +37,15 @@ public class GMPath {
         String mode = "mode=cycling";
         String apiKey = "key=AIzaSyBtE4iJVK9AjnvmbiKg_5Y42Q5JcPXkjYQ";
         String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode + "&" + apiKey;
-        String output = "json";
+        String outputFormat = "json";
 
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
-        return url;
+        return BASE_URL + outputFormat + "?" + parameters;
     }
 
-    public void getDirectionJSON(String url, final ResponseInterface callback, Context context) {
+    public void getDirectionJSON(Context context, LatLng origin, LatLng destination, final ResponseInterface callback) {
+        String url = generateURL(origin, destination);
+        Log.i("Maps: ", "Direction URL: " + url);
         final JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

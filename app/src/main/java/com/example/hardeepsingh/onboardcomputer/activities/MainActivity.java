@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 import com.example.hardeepsingh.onboardcomputer.R;
 import com.example.hardeepsingh.onboardcomputer.adapters.BuildingAdapter;
-import com.example.hardeepsingh.onboardcomputer.handlers.OnItemClickListener;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.OnItemClickListener;
 import com.example.hardeepsingh.onboardcomputer.models.Building;
 import com.example.hardeepsingh.onboardcomputer.speech.ConversionDelegate;
 import com.example.hardeepsingh.onboardcomputer.speech.SpeechDialogType;
@@ -268,6 +268,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Animate Camera To Cal Poly Pomona
+        LatLng calPolyPomona = new LatLng(34.0565, -117.8215);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(calPolyPomona, 17));
+    }
+
     public void showProgressBar() {
         runOnUiThread(new Runnable() {
             @Override
@@ -286,15 +296,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        // Animate Camera To Cal Poly Pomona
-        LatLng calPolyPomona = new LatLng(34.0565, -117.8215);
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(calPolyPomona, 17));
-    }
-
     public void placeMarkerOnSelection() {
         mMap.clear();
         LatLng calPolyPomona = new LatLng(selectedBuilding.getLatitude(), selectedBuilding.getLongitude());
@@ -303,7 +304,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .title(selectedBuilding.getName()));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(calPolyPomona, 17));
     }
-
 
     public void makeConfirmAlertDialog(Context context, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

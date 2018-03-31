@@ -189,6 +189,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", true));
                             break;
                     }
+                    finish();
                 }
             });
             builder.show();

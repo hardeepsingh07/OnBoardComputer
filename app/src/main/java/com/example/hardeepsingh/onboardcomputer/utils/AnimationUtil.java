@@ -54,6 +54,7 @@ public class AnimationUtil {
     public static void launchPanel(final ActivityWaypointRouteBinding binding) {
         binding.stopButton.setVisibility(View.GONE);
         binding.launchButton.setVisibility(View.VISIBLE);
+        binding.newDestinationLaunch.setVisibility(View.VISIBLE);
         binding.launchOptions.animate().scaleX(1).scaleY(1).setInterpolator(new OvershootInterpolator()).setDuration(500).setStartDelay(350).start();
         binding.destinationInfo.animate().translationX(0).setDuration(500).setInterpolator(new DecelerateInterpolator()).setStartDelay(500).start();
     }
@@ -67,6 +68,7 @@ public class AnimationUtil {
             @Override
             public void run() {
                 binding.launchButton.setVisibility(View.GONE);
+                binding.newDestinationLaunch.setVisibility(View.GONE);
                 binding.stopButton.setVisibility(View.VISIBLE);
                 binding.launchOptions.animate().scaleX(1).scaleY(1).setInterpolator(new OvershootInterpolator()).setDuration(500).start();
             }
@@ -93,6 +95,7 @@ public class AnimationUtil {
             public void run() {
                 binding.stopButton.setVisibility(View.GONE);
                 binding.launchButton.setVisibility(View.GONE);
+                binding.newDestinationLaunch.setVisibility(View.GONE);
             }
         }).start();
 

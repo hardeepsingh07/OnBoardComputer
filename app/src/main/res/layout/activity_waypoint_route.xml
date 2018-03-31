@@ -263,7 +263,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_alignParentBottom="true"
-            android:alpha="0.5"
+            android:alpha="0.7"
             android:background="#212121"
             android:translationY="200dp">
 
@@ -316,7 +316,7 @@
             </LinearLayout>
 
             <!--Buttons-->
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -332,6 +332,7 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/bordercircularbutton"
                     android:backgroundTint="@color/colorPrimary"
+                    android:layout_alignParentStart="true"
                     android:onClick="travelBack"
                     android:text="Go Back"
                     android:textColor="@android:color/black"
@@ -340,18 +341,19 @@
                     android:typeface="serif" />
 
                 <Button
-                    android:id="@+id/new_destination"
+                    android:id="@+id/new_destination_destination"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/bordercircularbutton"
+                    android:layout_toRightOf="@+id/go_back"
+                    android:text="@string/restart"
                     android:backgroundTint="@color/colorAccent"
                     android:onClick="newSelection"
-                    android:text="Restart"
                     android:textColor="@android:color/black"
-                    android:textSize="20sp"
                     android:textStyle="normal"
-                    android:typeface="serif" />
-            </LinearLayout>
+                    android:textSize="20sp"
+                    android:typeface="serif"/>
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -369,16 +371,31 @@
             android:scaleY="0">
 
             <Button
+                android:id="@+id/new_destination_launch"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bordercircularbutton"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="newSelection"
+                android:text="@string/restart"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:typeface="serif" />
+
+            <Button
                 android:id="@+id/launchButton"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/bordercircularbutton"
                 android:backgroundTint="@color/colorPrimary"
                 android:onClick="startNavigation"
+                android:layout_toRightOf="@+id/new_destination_launch"
+                android:layout_marginLeft="8dp"
                 android:text="@string/letsgo"
                 android:textSize="20sp"
                 android:textStyle="normal"
                 android:typeface="serif" />
+
 
             <Button
                 android:id="@+id/stopButton"

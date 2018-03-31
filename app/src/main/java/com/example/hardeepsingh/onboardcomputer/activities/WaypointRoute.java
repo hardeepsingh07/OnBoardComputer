@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
 import com.example.hardeepsingh.onboardcomputer.R;
@@ -150,9 +151,12 @@ public class WaypointRoute extends FragmentActivity
     public void travelBack(View view) {
         Collections.reverse(wayPoints);
         AnimationUtil.showLaunchPanel(binding);
+        removeTransitPolyLine();
     }
 
     public void newSelection(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -182,8 +186,7 @@ public class WaypointRoute extends FragmentActivity
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        Toast.makeText(this, "Not valid, please use actions buttons!", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -221,7 +224,7 @@ public class WaypointRoute extends FragmentActivity
     }
 
     public void createUpdateTransitPolyLine(LatLng latLng) {
-        if(transitPolyLine == null && transitPolyOptions == null) {
+        if (transitPolyLine == null && transitPolyOptions == null) {
             transitPolyOptions = new PolylineOptions();
             transitPolyOptions.width(15);
             transitPolyOptions.color(Color.GREEN);
@@ -247,7 +250,6 @@ public class WaypointRoute extends FragmentActivity
         if (building != null) {
             LatLng source = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
             LatLng destination = new LatLng(building.getLatitude(), building.getLongitude());
-
 
             //Store Destination Location for Distance Calculation
             this.destinationLocation = OnBoardUtil.convertCoOrdinationToLocation(building.getLatitude(), building.getLongitude());
@@ -365,7 +367,7 @@ public class WaypointRoute extends FragmentActivity
     }
 
     public void animateToMarker(LatLng latLng) {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 19));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
     }
 
     public void zoomRoute() {
@@ -380,32 +382,23 @@ public class WaypointRoute extends FragmentActivity
 
     private void simulateMarker() {
         handler = new Handler();
-        final long start = SystemClock.uptimeMillis();
-        final long duration = 30000;
-        final Interpolator interpolator = new AccelerateDecelerateInterpolator();
-
+        final long animationDelay = 1250;
         runnable = new Runnable() {
             int i = 0;
 
             @Override
             public void run() {
-                long elapsed = SystemClock.uptimeMillis() - start;
-                float t = interpolator.getInterpolation((float) elapsed / duration);
-
                 if (i < wayPoints.size()) {
                     LatLng current = wayPoints.get(i);
                     updateMarker(current);
                     createUpdateTransitPolyLine(current);
-
                     lastLocation = OnBoardUtil.convertLatLngToLocation(current);
                     updateProgressBindings();
                     destinationReached(current);
+
+                    handler.postDelayed(this, animationDelay);
                 }
                 i++;
-                if (t < 1.0) {
-                    // Post again 16ms later.
-                    handler.postDelayed(this, 1500);
-                }
             }
         };
         handler.post(runnable);

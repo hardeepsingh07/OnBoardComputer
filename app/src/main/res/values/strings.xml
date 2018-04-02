@@ -1,14 +1,7 @@
 <resources>
     <string name="app_name">OnBoardComputer</string>
 
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_activity_route">Map</string>
-    <string name="mute">MUTE</string>
     <string name="stop">STOP</string>
     <string name="letsgo">Let\'s Go</string>
-
-    <string name="access_token">pk.eyJ1IjoiaGFyZGVlcHNpbmdoMDciLCJhIjoiY2phOHlldzBmMDF0YTJxcGV4YWU3MXg3ZiJ9.56gDXLfJEC0pWu9xxIdL7A</string>
-    <string name="title_activity_destination">DestinationActivity</string>
-    <string name="new_destination">New Destination</string>
     <string name="restart">Restart</string>
 </resources>

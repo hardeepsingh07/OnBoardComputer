@@ -27,24 +27,24 @@ import java.util.List;
  */
 public class GMPath {
 
+    private static final String API_KEY = "AIzaSyBtE4iJVK9AjnvmbiKg_5Y42Q5JcPXkjYQ";
     private static final String BASE_URL = "https://maps.googleapis.com/maps/api/directions/";
     private List<LatLng> wayPoints = new ArrayList<>();
 
-    public String generateURL(LatLng origin, LatLng destination) {
+    public String generateURL(LatLng origin, LatLng destination, TransitType transitType) {
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
         String str_dest = "destination=" + destination.latitude + "," + destination.longitude;
-        String sensor = "sensor=false";
-        String mode = "mode=cycling";
-        String apiKey = "key=AIzaSyBtE4iJVK9AjnvmbiKg_5Y42Q5JcPXkjYQ";
-        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode + "&" + apiKey;
+        String mode = "mode=" + transitType.name().toLowerCase();
+        String apiKey = "key=" + API_KEY;
+        String parameters = str_origin + "&" + str_dest +  "&" + mode + "&" + apiKey;
         String outputFormat = "json";
 
         // Building the url to the web service
         return BASE_URL + outputFormat + "?" + parameters;
     }
 
-    public void getDirectionJSON(Context context, LatLng origin, LatLng destination, final ResponseInterface callback) {
-        String url = generateURL(origin, destination);
+    public void getDirectionJSON(Context context, LatLng origin, LatLng destination, TransitType transitType, final ResponseInterface callback) {
+        String url = generateURL(origin, destination, transitType);
         Log.i("Maps: ", "Direction URL: " + url);
         final JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -72,7 +72,8 @@ public class GMPath {
                 jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
                 ArrayList path = new ArrayList<>();
 
-                /** Traversing all legs */
+                /** Traversing all legs
+                    Note: Can get Distance and Duration from this JSON but for now just calculating manually for In-Transit updates */
                 for (int j = 0; j < jLegs.length(); j++) {
                     jSteps = ((JSONObject) jLegs.get(j)).getJSONArray("steps");
 

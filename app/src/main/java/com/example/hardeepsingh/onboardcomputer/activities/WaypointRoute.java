@@ -21,6 +21,7 @@ import com.example.hardeepsingh.onboardcomputer.pathHandlers.GoogleLocationEngin
 import com.example.hardeepsingh.onboardcomputer.models.Building;
 import com.example.hardeepsingh.onboardcomputer.pathHandlers.ResponseInterface;
 import com.example.hardeepsingh.onboardcomputer.pathHandlers.SRPath;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.TransitType;
 import com.example.hardeepsingh.onboardcomputer.utils.AnimationUtil;
 import com.example.hardeepsingh.onboardcomputer.utils.OnBoardUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -67,14 +68,16 @@ public class WaypointRoute extends FragmentActivity
     private String wayPointFileName;
     private Runnable runnable;
     private static Handler handler;
+    private TransitType transitType;
 
     private PolylineOptions transitPolyOptions;
     private Polyline transitPolyLine;
     private List<LatLng> userMovementPoints = new ArrayList<>();
 
-    public static Intent createIntent(Context context, Building building, String fileName, boolean simulate) {
+    public static Intent createIntent(Context context, Building building, String fileName, TransitType transitType, boolean simulate) {
         Intent intent = new Intent(context, WaypointRoute.class);
         intent.putExtra("building", building);
+        intent.putExtra("transit_type", transitType);
         intent.putExtra("fileName", fileName);
         intent.putExtra("simulate", simulate);
         return intent;
@@ -87,6 +90,7 @@ public class WaypointRoute extends FragmentActivity
         building = (Building) intent.getSerializableExtra("building");
         wayPointFileName = intent.getStringExtra("fileName");
         simulate = intent.getBooleanExtra("simulate", false);
+        transitType = (TransitType) intent.getSerializableExtra("transit_type");
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_waypoint_route);
         binding.setBuilding(building);
@@ -288,11 +292,14 @@ public class WaypointRoute extends FragmentActivity
      */
     public void generateDirectionSR(LatLng origin, LatLng destination) {
         final SRPath srPath = new SRPath();
-        srPath.getDirectionJSON(this, origin, destination, new ResponseInterface() {
+        srPath.getDirectionJSON(this, origin, destination, transitType, new ResponseInterface() {
             @Override
             public void onDataReceived(JSONObject jsonObject) {
                 PolylineOptions polylineOptions = srPath.generatePathPolyLine(getBaseContext(), jsonObject, wayPointFileName);
                 createPathPolyOptions(srPath.getWayPoints(), polylineOptions);
+
+                //Save the path way-points to file for reporting purposes
+                OnBoardUtil.saveFile("path_sr_" + building.getNumber(), srPath.getWayPoints());
             }
         });
     }
@@ -304,11 +311,14 @@ public class WaypointRoute extends FragmentActivity
      */
     public void generateDirectionsGM(LatLng origin, LatLng destination) {
         final GMPath gmPath = new GMPath();
-        gmPath.getDirectionJSON(this, origin, destination, new ResponseInterface() {
+        gmPath.getDirectionJSON(this, origin, destination, transitType, new ResponseInterface() {
             @Override
             public void onDataReceived(JSONObject jsonObject) {
                 PolylineOptions polylineOptions = gmPath.generatePathPolyLine(gmPath.parseDirectionJSON(jsonObject));
                 createPathPolyOptions(gmPath.getWayPoints(), polylineOptions);
+
+                //Save the path way-points to file for reporting purposes
+                OnBoardUtil.saveFile("path_gm_" + building.getNumber(), gmPath.getWayPoints());
             }
         });
     }
@@ -366,9 +376,13 @@ public class WaypointRoute extends FragmentActivity
         if (wayPoints.size() > 0) {
             LatLng destination = wayPoints.get(wayPoints.size() - 1);
             if (SphericalUtil.computeDistanceBetween(current, destination) < 5) {
+                inProgress = false;
                 AnimationUtil.showDestinationPanel(binding);
                 binding.bName.setText(building.getFullName());
                 binding.bDescription.setText(building.getSurroundings());
+
+                //Save the user movement way-points to file for reporting purposes
+                OnBoardUtil.saveFile("User_location_" + building.getNumber(), userMovementPoints);
             }
         }
     }

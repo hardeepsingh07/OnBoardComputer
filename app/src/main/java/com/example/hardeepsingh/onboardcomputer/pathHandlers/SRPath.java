@@ -28,7 +28,7 @@ public class SRPath {
     private static final String BASE_URL = "http://ip.jsontest.com/";
     private List<LatLng> wayPoints = new ArrayList<>();
 
-    public void getDirectionJSON(Context context, LatLng origin, LatLng destination, final ResponseInterface callback) {
+    public void getDirectionJSON(Context context, LatLng origin, LatLng destination, TransitType transitType, final ResponseInterface callback) {
         //TODO: Add Params as required
         String url = BASE_URL;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {

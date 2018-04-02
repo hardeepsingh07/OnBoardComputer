@@ -3,6 +3,7 @@ package com.example.hardeepsingh.onboardcomputer.utils;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Environment;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -16,11 +17,18 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Animation Util Class to Animate Launch, Destination and Route Panels
@@ -35,6 +43,7 @@ public class OnBoardUtil {
     private static final String LATITUDE = "lat";
     private static final String LONGITUDE = "long";
     private static final String DESCRIPTION = "description";
+    private static final String FILE_DIRECTORY = "OnBoardComputer";
 
     /**
      * Parse Building Info XML
@@ -146,8 +155,11 @@ public class OnBoardUtil {
         if (hours > 0) {
             result = hours + " hours: " + minutes + " min";
         } else {
-            result = minutes + " min";
-
+            if(minutes == 0) {
+                return "Less than minute";
+            } else {
+                result = minutes + " min";
+            }
         }
         return result;
     }
@@ -208,6 +220,33 @@ public class OnBoardUtil {
         }
 
         return result;
+    }
+
+    /**
+     * Make a file log from provide way-points
+     *
+     * @param fileName
+     * @param waypoints
+     */
+    public static void saveFile(String fileName, List<LatLng> waypoints) {
+        File directory = new File(Environment.getExternalStorageDirectory(), FILE_DIRECTORY);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        } else {
+            File outputFile = new File(directory, fileName);
+            try {
+                FileWriter out = new FileWriter(outputFile);
+
+                //Parse Way-Points and Write to File
+                for (LatLng latLng : waypoints) {
+                    out.write(String.valueOf(latLng.latitude) + "," + latLng.longitude +
+                            System.getProperty("line.separator"));
+                }
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

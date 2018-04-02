@@ -32,6 +32,7 @@ import com.example.hardeepsingh.onboardcomputer.R;
 import com.example.hardeepsingh.onboardcomputer.adapters.BuildingAdapter;
 import com.example.hardeepsingh.onboardcomputer.pathHandlers.OnItemClickListener;
 import com.example.hardeepsingh.onboardcomputer.models.Building;
+import com.example.hardeepsingh.onboardcomputer.pathHandlers.TransitType;
 import com.example.hardeepsingh.onboardcomputer.speech.ConversionDelegate;
 import com.example.hardeepsingh.onboardcomputer.speech.SpeechDialogType;
 import com.example.hardeepsingh.onboardcomputer.speech.SpeechToTextConverter;
@@ -174,30 +175,34 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * Give transit options to provide multiple way to generate path {Google Maps, Server(Way-point file)}
+     * Note: Only here for project purposes, need to be optimized to single option later
+     */
     public void showActivityDialog() {
         if (selectedBuilding != null) {
-            CharSequence colors[] = new CharSequence[]{"Location Update with Google Path Generator",
+            CharSequence modes[] = new CharSequence[]{"Location Update with Google Path Generator",
                     "Simulate Location Updates with Google Path Generator",
                     "Location Update with WayPoints provided by File",
                     "Simulate Location Update with WayPoints provide by File"};
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Pick a Transit Type");
-            builder.setItems(colors, new DialogInterface.OnClickListener() {
+            builder.setItems(modes, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
                         case 0:
-                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, false));
+                            showTransitDialog(false);
                             break;
                         case 1:
-                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, true));
+                            showTransitDialog(true);
                             break;
                         case 2:
-                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", false));
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", TransitType.BICYCLING, false));
                             break;
                         case 3:
-                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", true));
+                            startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", TransitType.BICYCLING, true));
                             break;
                     }
                     finish();
@@ -207,6 +212,35 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             Toast.makeText(this, "Please make a building selection!!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * Allow choice on Transit Type {Driving, Bicycling, Walking} which are used for path generation
+     * Note: Only here for project purposes, need to optamize to single option later
+     * @param simulate
+     */
+    public void showTransitDialog(final boolean simulate) {
+        CharSequence transit[] = new CharSequence[]{"Driving", "Bicycling", "Walking"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Pick a Transit Type");
+        builder.setItems(transit, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.DRIVING, simulate));
+                        break;
+                    case 1:
+                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.BICYCLING, simulate));
+                        break;
+                    case 2:
+                        startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.WALKING, simulate));
+                        break;
+                }
+                finish();
+            }
+        });
+        builder.show();
     }
 
     /**

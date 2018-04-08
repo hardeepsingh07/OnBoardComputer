@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ArrayList<Building> buildings;
     private BuildingAdapter buildingAdapter;
     private GoogleMap mMap;
+
+    //Voice Recognition
     private AlertDialog alert;
 
     private Building selectedBuilding;
@@ -186,29 +188,32 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     "Location Update with WayPoints provided by File",
                     "Simulate Location Update with WayPoints provide by File"};
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Pick a Transit Type");
-            builder.setItems(modes, new DialogInterface.OnClickListener() {
+            AlertDialog.Builder mainDialog = new AlertDialog.Builder(this);
+            mainDialog.setTitle("Pick a Transit Type");
+            mainDialog.setItems(modes, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
                         case 0:
                             showTransitDialog(false);
+                            dialog.dismiss();
                             break;
                         case 1:
                             showTransitDialog(true);
+                            dialog.dismiss();
                             break;
                         case 2:
                             startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", TransitType.BICYCLING, false));
+                            finish();
                             break;
                         case 3:
                             startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, "blg8_to_blg9.txt", TransitType.BICYCLING, true));
+                            finish();
                             break;
                     }
-                    finish();
                 }
             });
-            builder.show();
+            mainDialog.create().show();
         } else {
             Toast.makeText(this, "Please make a building selection!!", Toast.LENGTH_SHORT).show();
         }
@@ -217,30 +222,33 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     /**
      * Allow choice on Transit Type {Driving, Bicycling, Walking} which are used for path generation
      * Note: Only here for project purposes, need to optamize to single option later
+     *
      * @param simulate
      */
     public void showTransitDialog(final boolean simulate) {
         CharSequence transit[] = new CharSequence[]{"Driving", "Bicycling", "Walking"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick a Transit Type");
-        builder.setItems(transit, new DialogInterface.OnClickListener() {
+        AlertDialog.Builder transitOptions = new AlertDialog.Builder(this);
+        transitOptions.setTitle("Pick a Transit Type");
+        transitOptions.setItems(transit, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case 0:
+                        dialog.dismiss();
                         startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.DRIVING, simulate));
                         break;
                     case 1:
+                        dialog.dismiss();
                         startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.BICYCLING, simulate));
                         break;
                     case 2:
+                        dialog.dismiss();
                         startActivity(WaypointRoute.createIntent(MainActivity.this, selectedBuilding, null, TransitType.WALKING, simulate));
                         break;
                 }
                 finish();
             }
-        });
-        builder.show();
+        }).create().show();
     }
 
     /**

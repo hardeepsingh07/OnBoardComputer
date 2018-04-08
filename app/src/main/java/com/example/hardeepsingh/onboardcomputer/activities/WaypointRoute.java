@@ -151,6 +151,9 @@ public class WaypointRoute extends FragmentActivity
         }
 
         AnimationUtil.showLaunchPanel(binding);
+
+        //Save the user movement way-points to file for reporting purposes
+        OnBoardUtil.saveFile("user_location_" + building.getNumber() + "_" + simulate, userMovementPoints);
     }
 
 //    public void travelBack(View view) {
@@ -299,7 +302,7 @@ public class WaypointRoute extends FragmentActivity
                 createPathPolyOptions(srPath.getWayPoints(), polylineOptions);
 
                 //Save the path way-points to file for reporting purposes
-                OnBoardUtil.saveFile("path_sr_" + building.getNumber(), srPath.getWayPoints());
+                OnBoardUtil.saveFile("path_sr_" + building.getNumber() + "_" + simulate, srPath.getWayPoints());
             }
         });
     }
@@ -318,7 +321,7 @@ public class WaypointRoute extends FragmentActivity
                 createPathPolyOptions(gmPath.getWayPoints(), polylineOptions);
 
                 //Save the path way-points to file for reporting purposes
-                OnBoardUtil.saveFile("path_gm_" + building.getNumber(), gmPath.getWayPoints());
+                OnBoardUtil.saveFile("path_gm_" + building.getNumber() + "_" + simulate, gmPath.getWayPoints());
             }
         });
     }
@@ -382,7 +385,7 @@ public class WaypointRoute extends FragmentActivity
                 binding.bDescription.setText(building.getSurroundings());
 
                 //Save the user movement way-points to file for reporting purposes
-                OnBoardUtil.saveFile("User_location_" + building.getNumber(), userMovementPoints);
+                OnBoardUtil.saveFile("user_location_" + building.getNumber() + "_" + simulate, userMovementPoints);
             }
         }
     }

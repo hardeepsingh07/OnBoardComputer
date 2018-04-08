@@ -155,7 +155,7 @@ public class OnBoardUtil {
         if (hours > 0) {
             result = hours + " hours: " + minutes + " min";
         } else {
-            if(minutes == 0) {
+            if (minutes == 0) {
                 return "Less than minute";
             } else {
                 result = minutes + " min";
@@ -229,23 +229,23 @@ public class OnBoardUtil {
      * @param waypoints
      */
     public static void saveFile(String fileName, List<LatLng> waypoints) {
-        File directory = new File(Environment.getExternalStorageDirectory(), FILE_DIRECTORY);
+        File directory = new File(Environment.getExternalStorageDirectory().toString() + File.separator + FILE_DIRECTORY);
         if (!directory.exists()) {
-            directory.mkdirs();
-        } else {
-            File outputFile = new File(directory, fileName);
-            try {
-                FileWriter out = new FileWriter(outputFile);
+            boolean directoryMake = directory.mkdir();
+            Log.d("OnBoardComputer:", "Directory was created successfully? " + directoryMake);
+        }
 
-                //Parse Way-Points and Write to File
-                for (LatLng latLng : waypoints) {
-                    out.write(String.valueOf(latLng.latitude) + "," + latLng.longitude +
-                            System.getProperty("line.separator"));
-                }
-                out.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+        File outputFile = new File(directory + File.separator + fileName + ".txt");
+        try {
+            FileWriter out = new FileWriter(outputFile);
+            //Parse Way-Points and Write to File
+            for (LatLng latLng : waypoints) {
+                out.write(String.valueOf(latLng.latitude) + "," + latLng.longitude +
+                        System.getProperty("line.separator"));
             }
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

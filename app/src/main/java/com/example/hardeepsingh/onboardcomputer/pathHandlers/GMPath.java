@@ -63,7 +63,6 @@ public class GMPath {
 
     public ArrayList<ArrayList<HashMap<String, String>>> parseDirectionJSON(JSONObject jsonObject) {
         ArrayList<ArrayList<HashMap<String, String>>> routes = new ArrayList<>();
-        Log.d("Hsing", jsonObject.toString());
         JSONArray jRoutes, jLegs, jSteps;
         try {
             jRoutes = jsonObject.getJSONArray("routes");
